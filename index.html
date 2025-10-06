@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xsentry Labs - Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sohne:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Dark gradient background */
+        .bg-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, #1a1a1a 0%, #0a0a0a 70%);
+            z-index: 1;
+        }
+
+        /* Subtle animated mesh gradient */
+        .mesh-gradient {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(156, 163, 175, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(107, 114, 128, 0.03) 0%, transparent 50%);
+            animation: meshMove 20s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        @keyframes meshMove {
+            0%, 100% { transform: translate(0, 0); }
+            33% { transform: translate(-3%, 3%); }
+            66% { transform: translate(3%, -3%); }
+        }
+
+        /* Floating particles representing AI nodes */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(156, 163, 175, 0.5);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translate(0, 0) scale(1);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            50% { 
+                transform: translate(var(--tx), var(--ty)) scale(1.5);
+            }
+        }
+
+        /* Subtle scan lines - very minimal */
+        .scan-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.05) 0px,
+                transparent 1px,
+                transparent 2px,
+                rgba(0, 0, 0, 0.05) 3px
+            );
+            z-index: 4;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        /* Main container */
+        .container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 40px;
+            max-width: 1000px;
+        }
+
+        /* Security badge/icon */
+        .security-icon {
+            margin-bottom: 40px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .shield {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .shield-outer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgba(156, 163, 175, 0.4);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            animation: shieldRotate 10s linear infinite;
+        }
+
+        .shield-inner {
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(156, 163, 175, 0.15));
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        @keyframes shieldRotate {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.05); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        /* Title */
+        .title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #d1d5db 50%, #9ca3af 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 8s ease infinite;
+            line-height: 1.1;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Tagline */
+        .tagline {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            color: #9ca3af;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        /* Terminal-like status text */
+        .status-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            color: #9ca3af;
+            margin-top: 40px;
+            opacity: 0.8;
+            animation: blink 1.5s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 0.8; }
+            50%, 100% { opacity: 0.4; }
+        }
+
+        /* Decorative corner lines */
+        .corner-accent {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            z-index: 5;
+            opacity: 0.4;
+        }
+
+        .corner-accent::before,
+        .corner-accent::after {
+            content: '';
+            position: absolute;
+            background: linear-gradient(135deg, #ffffff, #9ca3af);
+        }
+
+        .corner-accent.top-left {
+            top: 30px;
+            left: 30px;
+        }
+
+        .corner-accent.top-left::before {
+            width: 2px;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .corner-accent.top-left::after {
+            width: 100%;
+            height: 2px;
+            top: 0;
+            left: 0;
+        }
+
+        .corner-accent.bottom-right {
+            bottom: 30px;
+            right: 30px;
+        }
+
+        .corner-accent.bottom-right::before {
+            width: 2px;
+            height: 100%;
+            bottom: 0;
+            right: 0;
+        }
+
+        .corner-accent.bottom-right::after {
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            right: 0;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .shield {
+                width: 60px;
+                height: 60px;
+            }
+
+            .security-icon {
+                margin-bottom: 30px;
+            }
+
+            .subtitle {
+                padding: 12px 24px;
+                font-size: clamp(1rem, 4vw, 1.2rem);
+            }
+
+            .subtitle {
+                padding: 12px 24px;
+                font-size: clamp(1rem, 4vw, 1.2rem);
+            }
+
+            .corner-accent {
+                width: 40px;
+                height: 40px;
+            }
+
+            .corner-accent.top-left {
+                top: 15px;
+                left: 15px;
+            }
+
+            .corner-accent.bottom-right {
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        /* Glitch effect - very subtle and rare */
+        @keyframes subtleGlitch {
+            0%, 98%, 100% { 
+                transform: translate(0);
+                filter: blur(0);
+            }
+            99% { 
+                transform: translate(2px, -2px);
+                filter: blur(1px);
+            }
+        }
+
+        .title {
+            animation: gradientShift 8s ease infinite, subtleGlitch 10s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background layers -->
+    <div class="bg-layer"></div>
+    <div class="mesh-gradient"></div>
+    <div class="particles" id="particles"></div>
+    <div class="scan-overlay"></div>
+
+    <!-- Corner accents -->
+    <div class="corner-accent top-left"></div>
+    <div class="corner-accent bottom-right"></div>
+
+    <!-- Main content -->
+    <div class="container">
+        <div class="security-icon">
+            <div class="shield">
+                <div class="shield-outer"></div>
+                <div class="shield-inner"></div>
+            </div>
+        </div>
+        
+        <h1 class="title">Xsentry Labs</h1>
+        <p class="tagline">Autonomous Security</p>
+        <p class="status-text">&gt; coming_soon. stay_secure.</p>
+    </div>
+
+    <script>
+        // Generate floating particles (AI nodes)
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 30;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            const startX = Math.random() * 100;
+            const startY = Math.random() * 100;
+            const moveX = (Math.random() - 0.5) * 200;
+            const moveY = (Math.random() - 0.5) * 200;
+            const delay = Math.random() * 20;
+            
+            particle.style.left = `${startX}%`;
+            particle.style.top = `${startY}%`;
+            particle.style.setProperty('--tx', `${moveX}px`);
+            particle.style.setProperty('--ty', `${moveY}px`);
+            particle.style.animationDelay = `${delay}s`;
+            
+            particlesContainer.appendChild(particle);
+        }
+
+        // Subtle random glitch effect
+        function randomGlitch() {
+            const container = document.querySelector('.container');
+            if (Math.random() > 0.98) {
+                container.style.transform = `translate(${Math.random() * 2 - 1}px, ${Math.random() * 2 - 1}px)`;
+                setTimeout(() => {
+                    container.style.transform = 'translate(0, 0)';
+                }, 30);
+            }
+        }
+
+        setInterval(randomGlitch, 200);
+
+        // Static message - no rotation
+        const statusText = document.querySelector('.status-text');
+        statusText.textContent = '> coming_soon. stay_secure.';
+    </script>
+</body>
+</html>
