@@ -6,8 +6,7 @@
     <title>Xsentry Labs - Coming Soon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sohne:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,8 +15,8 @@
         }
 
         body {
-            font-family: 'Space Grotesk', 'Inter', sans-serif;
-            background: #0a0a0a;
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #000000;
             color: #fff;
             overflow: hidden;
             height: 100vh;
@@ -27,68 +26,14 @@
             position: relative;
         }
 
-        /* Dark gradient background */
-        .bg-layer {
+        /* Neural network canvas background */
+        #neuralCanvas {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(ellipse at center, #1a1a1a 0%, #0a0a0a 70%);
             z-index: 1;
-        }
-
-        /* Subtle animated mesh gradient */
-        .mesh-gradient {
-            position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(156, 163, 175, 0.04) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(107, 114, 128, 0.03) 0%, transparent 50%);
-            animation: meshMove 20s ease-in-out infinite;
-            z-index: 2;
-        }
-
-        @keyframes meshMove {
-            0%, 100% { transform: translate(0, 0); }
-            33% { transform: translate(-3%, 3%); }
-            66% { transform: translate(3%, -3%); }
-        }
-
-        /* Floating particles representing AI nodes */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 3;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: rgba(156, 163, 175, 0.5);
-            border-radius: 50%;
-            animation: float 20s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0%, 100% { 
-                transform: translate(0, 0) scale(1);
-                opacity: 0;
-            }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            50% { 
-                transform: translate(var(--tx), var(--ty)) scale(1.5);
-            }
         }
 
         /* Subtle scan lines - very minimal */
@@ -105,7 +50,7 @@
                 transparent 2px,
                 rgba(0, 0, 0, 0.05) 3px
             );
-            z-index: 4;
+            z-index: 2;
             pointer-events: none;
             opacity: 0.3;
         }
@@ -163,12 +108,12 @@
 
         /* Title */
         .title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.5rem, 7vw, 5rem);
-            font-weight: 700;
-            letter-spacing: -0.03em;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #d1d5db 50%, #9ca3af 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #b0b0b0 100%);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             background-clip: text;
@@ -184,21 +129,21 @@
 
         /* Tagline */
         .tagline {
-            font-size: clamp(0.9rem, 2vw, 1.1rem);
-            color: #9ca3af;
-            font-weight: 300;
-            letter-spacing: 0.05em;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: #a0a0a0;
+            font-weight: 400;
+            letter-spacing: 0.08em;
             margin-bottom: 50px;
             text-transform: uppercase;
         }
 
         /* Terminal-like status text */
         .status-text {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: clamp(0.9rem, 2vw, 1.2rem);
-            color: #9ca3af;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            color: #888888;
             margin-top: 40px;
-            opacity: 0.8;
+            opacity: 0.9;
             animation: blink 1.5s step-end infinite;
         }
 
@@ -302,28 +247,11 @@
             }
         }
 
-        /* Glitch effect - very subtle and rare */
-        @keyframes subtleGlitch {
-            0%, 98%, 100% { 
-                transform: translate(0);
-                filter: blur(0);
-            }
-            99% { 
-                transform: translate(2px, -2px);
-                filter: blur(1px);
-            }
-        }
-
-        .title {
-            animation: gradientShift 8s ease infinite, subtleGlitch 10s infinite;
-        }
     </style>
 </head>
 <body>
     <!-- Background layers -->
-    <div class="bg-layer"></div>
-    <div class="mesh-gradient"></div>
-    <div class="particles" id="particles"></div>
+    <canvas id="neuralCanvas"></canvas>
     <div class="scan-overlay"></div>
 
     <!-- Corner accents -->
@@ -345,28 +273,98 @@
     </div>
 
     <script>
-        // Generate floating particles (AI nodes)
-        const particlesContainer = document.getElementById('particles');
-        const particleCount = 30;
+        // Neural network visualization
+        const canvas = document.getElementById('neuralCanvas');
+        const ctx = canvas.getContext('2d');
 
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            
-            const startX = Math.random() * 100;
-            const startY = Math.random() * 100;
-            const moveX = (Math.random() - 0.5) * 200;
-            const moveY = (Math.random() - 0.5) * 200;
-            const delay = Math.random() * 20;
-            
-            particle.style.left = `${startX}%`;
-            particle.style.top = `${startY}%`;
-            particle.style.setProperty('--tx', `${moveX}px`);
-            particle.style.setProperty('--ty', `${moveY}px`);
-            particle.style.animationDelay = `${delay}s`;
-            
-            particlesContainer.appendChild(particle);
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        // Resize canvas on window resize
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            initNodes();
+        });
+
+        // Node class
+        class Node {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = 2;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(180, 180, 180, 0.6)';
+                ctx.fill();
+            }
         }
+
+        // Create nodes
+        const nodes = [];
+        const nodeCount = 80;
+
+        function initNodes() {
+            nodes.length = 0;
+            for (let i = 0; i < nodeCount; i++) {
+                nodes.push(new Node());
+            }
+        }
+
+        initNodes();
+
+        // Draw connections between close nodes
+        function drawConnections() {
+            const maxDistance = 150;
+
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < maxDistance) {
+                        const opacity = (1 - distance / maxDistance) * 0.3;
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(150, 150, 150, ${opacity})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        // Animation loop
+        function animate() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+            ctx.fillRect(0, 0, width, height);
+
+            drawConnections();
+
+            nodes.forEach(node => {
+                node.update();
+                node.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
 
         // Subtle random glitch effect
         function randomGlitch() {
@@ -380,10 +378,6 @@
         }
 
         setInterval(randomGlitch, 200);
-
-        // Static message - no rotation
-        const statusText = document.querySelector('.status-text');
-        statusText.textContent = '> coming_soon. stay_secure.';
     </script>
 </body>
 </html>
