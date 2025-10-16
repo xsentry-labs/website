@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xsentry Labs - Coming Soon</title>
+    <title>Xsentry Labs — Applied Intelligence</title>
+    <meta name="description" content="A research lab building intelligent systems that understand, adapt, and create.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Xsentry Labs — Applied Intelligence">
+    <meta property="og:description" content="A research lab building intelligent systems that understand, adapt, and create.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -14,16 +24,19 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #000000;
-            color: #fff;
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 18px;
+            line-height: 1.7;
+            letter-spacing: -0.003em;
             position: relative;
+            overflow-x: hidden;
         }
 
         /* Neural network canvas background */
@@ -33,267 +46,204 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1;
-        }
-
-        /* Subtle scan lines - very minimal */
-        .scan-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(0, 0, 0, 0.05) 0px,
-                transparent 1px,
-                transparent 2px,
-                rgba(0, 0, 0, 0.05) 3px
-            );
-            z-index: 2;
-            pointer-events: none;
+            z-index: 0;
             opacity: 0.3;
         }
 
-        /* Main container */
-        .container {
+        /* Main content wrapper */
+        main {
             position: relative;
-            z-index: 10;
+            z-index: 1;
+        }
+
+        /* Section container */
+        section {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 2rem;
+        }
+
+        .content {
+            max-width: 720px;
+            width: 100%;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* HERO SECTION */
+        #hero {
+            min-height: 100vh;
             text-align: center;
-            padding: 40px;
-            max-width: 1000px;
         }
 
-        /* Security badge/icon */
-        .security-icon {
-            margin-bottom: 40px;
-            animation: pulse 3s ease-in-out infinite;
+        #hero .content {
+            max-width: 900px;
         }
 
-        .shield {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .shield-outer {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 2px solid rgba(156, 163, 175, 0.4);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            animation: shieldRotate 10s linear infinite;
-        }
-
-        .shield-inner {
-            position: absolute;
-            width: 60%;
-            height: 60%;
-            top: 20%;
-            left: 20%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(156, 163, 175, 0.15));
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        }
-
-        @keyframes shieldRotate {
-            0%, 100% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.05); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.8; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.05); }
-        }
-
-        /* Title */
-        .title {
-            font-family: 'IBM Plex Sans', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 400;
-            letter-spacing: -0.01em;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #b0b0b0 100%);
-            background-size: 200% 200%;
+        #hero h1 {
+            font-size: clamp(36px, 4.5vw, 48px);
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 181, 127, 0.85) 100%);
             -webkit-background-clip: text;
-            background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: gradientShift 8s ease infinite;
-            line-height: 1.1;
+            background-clip: text;
         }
 
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        /* IDEA SECTION */
+        #the-idea {
+            text-align: left;
+            padding: 4rem 2rem;
         }
 
-        /* Tagline */
-        .tagline {
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            color: #a0a0a0;
-            font-weight: 400;
-            letter-spacing: 0.02em;
-            margin-bottom: 50px;
+        #the-idea p {
+            font-size: clamp(18px, 2vw, 21px);
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.003em;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.75);
         }
 
-        /* Terminal-like status text */
-        .status-text {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: clamp(0.95rem, 2vw, 1.1rem);
-            color: #888888;
-            margin-top: 40px;
-            opacity: 0.9;
-            animation: blink 1.5s step-end infinite;
+        #the-idea p em {
+            font-style: italic;
+            color: rgba(255, 181, 127, 0.85);
         }
 
-        @keyframes blink {
-            0%, 49% { opacity: 0.8; }
-            50%, 100% { opacity: 0.4; }
+        /* CLOSING SECTION */
+        #closing {
+            text-align: center;
+            padding: 4rem 2rem 3rem;
         }
 
-        /* Decorative corner lines */
-        .corner-accent {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            z-index: 5;
-            opacity: 0.4;
+        #closing h2 {
+            font-size: clamp(20px, 2.5vw, 26px);
+            line-height: 1.5;
+            font-weight: 300;
+            letter-spacing: -0.01em;
         }
 
-        .corner-accent::before,
-        .corner-accent::after {
-            content: '';
-            position: absolute;
-            background: linear-gradient(135deg, #ffffff, #9ca3af);
+        /* Footer */
+        footer {
+            margin-top: 2rem;
+            padding: 2rem 2rem;
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.3;
+            letter-spacing: 0;
         }
 
-        .corner-accent.top-left {
-            top: 30px;
-            left: 30px;
+        footer a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: opacity 0.3s;
         }
 
-        .corner-accent.top-left::before {
-            width: 2px;
-            height: 100%;
-            top: 0;
-            left: 0;
-        }
-
-        .corner-accent.top-left::after {
-            width: 100%;
-            height: 2px;
-            top: 0;
-            left: 0;
-        }
-
-        .corner-accent.bottom-right {
-            bottom: 30px;
-            right: 30px;
-        }
-
-        .corner-accent.bottom-right::before {
-            width: 2px;
-            height: 100%;
-            bottom: 0;
-            right: 0;
-        }
-
-        .corner-accent.bottom-right::after {
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            right: 0;
+        footer a:hover {
+            opacity: 1;
         }
 
         /* Mobile responsiveness */
         @media (max-width: 768px) {
-            .container {
-                padding: 20px;
+            body {
+                font-size: 17px;
             }
 
-            .shield {
-                width: 60px;
-                height: 60px;
+            section {
+                padding: 2rem 1.5rem;
             }
 
-            .security-icon {
-                margin-bottom: 30px;
+            #hero h1 {
+                font-size: clamp(30px, 6.5vw, 40px);
             }
 
-            .subtitle {
-                padding: 12px 24px;
-                font-size: clamp(1rem, 4vw, 1.2rem);
+            #the-idea p {
+                font-size: clamp(17px, 4.5vw, 19px);
+                line-height: 1.7;
             }
 
-            .subtitle {
-                padding: 12px 24px;
-                font-size: clamp(1rem, 4vw, 1.2rem);
-            }
-
-            .corner-accent {
-                width: 40px;
-                height: 40px;
-            }
-
-            .corner-accent.top-left {
-                top: 15px;
-                left: 15px;
-            }
-
-            .corner-accent.bottom-right {
-                bottom: 15px;
-                right: 15px;
+            #closing h2 {
+                font-size: clamp(18px, 5vw, 22px);
             }
         }
-
     </style>
 </head>
 <body>
-    <!-- Background layers -->
+    <!-- Neural network background -->
     <canvas id="neuralCanvas"></canvas>
-    <div class="scan-overlay"></div>
 
-    <!-- Corner accents -->
-    <div class="corner-accent top-left"></div>
-    <div class="corner-accent bottom-right"></div>
-
-    <!-- Main content -->
-    <div class="container">
-        <div class="security-icon">
-            <div class="shield">
-                <div class="shield-outer"></div>
-                <div class="shield-inner"></div>
+    <main>
+        <!-- HERO -->
+        <section id="hero">
+            <div class="content">
+                <h1>Xsentry Labs</h1>
             </div>
-        </div>
-        
-        <h1 class="title">Xsentry Labs</h1>
-        <p class="tagline">Autonomous Security</p>
-        <p class="status-text">&gt; coming_soon. stay_secure.</p>
-    </div>
+        </section>
+
+        <!-- THE IDEA -->
+        <section id="the-idea">
+            <div class="content">
+                <p>
+                    For years, engineering has been deterministic. A sequence of operations to execute. Protocols to implement. Systems to deploy.
+                </p>
+                <p>
+                    <em>Applied Intelligence</em> changes the equation.
+                </p>
+                <p>
+                    Intelligent systems don't just run anymore, they reason, understand and adapt to uncertainty which drives the co-creation of next-gen solutions.
+                </p>
+                <p>
+                    The shift is inevitable. What we build with it is not.
+                </p>
+            </div>
+        </section>
+
+        <!-- CLOSING -->
+        <section id="closing">
+            <div class="content">
+                <h2>
+                    If this resonates, stay close.
+                </h2>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2025 Xsentry Labs<br>
+        <a href="#">Privacy</a> · <a href="#">Terms</a>
+    </footer>
 
     <script>
-        // Neural network visualization
+        // Neural network visualization - slower, more ambient
         const canvas = document.getElementById('neuralCanvas');
         const ctx = canvas.getContext('2d');
 
         let width = canvas.width = window.innerWidth;
         let height = canvas.height = window.innerHeight;
 
-        // Resize canvas on window resize
         window.addEventListener('resize', () => {
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
             initNodes();
         });
 
-        // Node class
         class Node {
             constructor() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.radius = 2;
+                // Slower movement
+                this.vx = (Math.random() - 0.5) * 0.15;
+                this.vy = (Math.random() - 0.5) * 0.15;
+                this.radius = 1;
             }
 
             update() {
@@ -307,14 +257,14 @@
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(180, 180, 180, 0.6)';
+                // Soft orange nodes
+                ctx.fillStyle = 'rgba(255, 181, 127, 0.5)';
                 ctx.fill();
             }
         }
 
-        // Create nodes
         const nodes = [];
-        const nodeCount = 80;
+        const nodeCount = 40; // Fewer nodes for cleaner look
 
         function initNodes() {
             nodes.length = 0;
@@ -325,9 +275,8 @@
 
         initNodes();
 
-        // Draw connections between close nodes
         function drawConnections() {
-            const maxDistance = 150;
+            const maxDistance = 200;
 
             for (let i = 0; i < nodes.length; i++) {
                 for (let j = i + 1; j < nodes.length; j++) {
@@ -336,10 +285,11 @@
                     const distance = Math.sqrt(dx * dx + dy * dy);
 
                     if (distance < maxDistance) {
-                        const opacity = (1 - distance / maxDistance) * 0.3;
+                        // Soft orange connections
+                        const opacity = (1 - distance / maxDistance) * 0.15;
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(150, 150, 150, ${opacity})`;
-                        ctx.lineWidth = 1;
+                        ctx.strokeStyle = `rgba(255, 181, 127, ${opacity})`;
+                        ctx.lineWidth = 0.5;
                         ctx.moveTo(nodes[i].x, nodes[i].y);
                         ctx.lineTo(nodes[j].x, nodes[j].y);
                         ctx.stroke();
@@ -348,9 +298,8 @@
             }
         }
 
-        // Animation loop
         function animate() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+            ctx.fillStyle = 'rgba(10, 10, 10, 1)';
             ctx.fillRect(0, 0, width, height);
 
             drawConnections();
@@ -364,19 +313,7 @@
         }
 
         animate();
-
-        // Subtle random glitch effect
-        function randomGlitch() {
-            const container = document.querySelector('.container');
-            if (Math.random() > 0.98) {
-                container.style.transform = `translate(${Math.random() * 2 - 1}px, ${Math.random() * 2 - 1}px)`;
-                setTimeout(() => {
-                    container.style.transform = 'translate(0, 0)';
-                }, 30);
-            }
-        }
-
-        setInterval(randomGlitch, 200);
     </script>
 </body>
 </html>
+
