@@ -1,5 +1,5 @@
 # website
 Repo for website
 
-6th October 2025 - Currently only has a coming soon page and is connected/deployed through Vercel. 14 days free trial for the deployment. 
+18th October 2025 - Currently only has a brief description page of sorts and is connected/deployed through Vercel. 2 days free trial for the deployment. 
 
