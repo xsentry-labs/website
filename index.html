@@ -202,32 +202,39 @@
         }
         .ventures__card {
             background: var(--white);
-            border: 1px solid transparent;
-            padding: 3rem;
-            text-align: center;
+            border: 1px solid var(--slate-200);
+            transition: border-color 0.2s, box-shadow 0.2s;
             text-decoration: none;
             color: inherit;
-            transition: border-color 0.2s;
+            display: flex;
+            flex-direction: column;
         }
-        .ventures__card:hover { border-color: var(--slate-200); }
+        .ventures__card:hover {
+            border-color: var(--slate-400);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        }
         .ventures__card-img {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 5rem;
-            height: 5rem;
-            margin-bottom: 1.5rem;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
         }
         .ventures__card-img img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
+            display: block;
+        }
+        .ventures__card-body {
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
         .ventures__card-body h3 {
             font-size: 1.25rem;
             font-weight: 600;
             color: var(--slate-900);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
         .ventures__card-body p {
             color: var(--slate-600);
@@ -235,6 +242,7 @@
             font-size: 0.9375rem;
             font-weight: 300;
             margin-bottom: 1.25rem;
+            flex: 1;
         }
         .ventures__card-arrow {
             display: inline-flex;
