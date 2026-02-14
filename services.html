@@ -56,7 +56,7 @@
         body {
             font-family: 'Noto Sans', sans-serif;
             background: var(--white);
-            color: var(--slate-600);
+            color: #000;
             font-size: 16px;
             line-height: 1.6;
             font-weight: 400;
@@ -290,18 +290,17 @@
             align-items: center;
             gap: 0.5rem;
             padding: 1rem 2.5rem;
-            background: var(--slate-900);
-            color: var(--white);
+            background: var(--white);
+            color: var(--slate-900);
             font-family: 'Noto Sans', sans-serif;
             font-size: 1.0625rem;
             font-weight: 500;
-            border: none;
-            border-radius: 4px;
+            border: 1px solid transparent;
             cursor: pointer;
             text-decoration: none;
-            transition: background 0.2s;
+            transition: border-color 0.2s;
         }
-        .lead__cta:hover { background: var(--slate-800); }
+        .lead__cta:hover { border-color: var(--slate-200); }
         .lead__cta svg { width: 1.25rem; height: 1.25rem; }
         .lead__visual {
             display: flex;
@@ -531,7 +530,7 @@
                 <h2>Ready to Build Something Amazing?</h2>
                 <p>Get a free consultation and discover how AI-native development can transform your business. No commitment required.</p>
                 <a href="mailto:hello@xsentrylabs.com" class="lead__cta">
-                    Book Free Consultation
+                    book free consultation
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
             </div>
