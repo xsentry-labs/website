@@ -185,6 +185,20 @@ body {
 .ventures__card:hover .ventures__card-img img {
     transform: scale(1.05);
 }
+.ventures__card-img--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--slate-100);
+}
+.ventures__card-img--placeholder span {
+    font-size: 4rem;
+    filter: grayscale(1);
+    transition: filter 0.3s;
+}
+.ventures__card:hover .ventures__card-img--placeholder span {
+    filter: grayscale(1);
+}
 .ventures__card-body {
     padding: 1.75rem;
     display: flex;
@@ -573,6 +587,550 @@ body {
     color: var(--slate-500);
 }
 
+/* ========== CLAWIX PAGE ========== */
+.clawix-intro {
+    background: var(--white);
+    padding: 4rem 1.5rem 3rem;
+    text-align: center;
+}
+.clawix-intro__inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.clawix-intro__inner h2 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 600;
+    color: var(--slate-900);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+.clawix-intro__inner p {
+    font-size: 1.0625rem;
+    color: var(--slate-600);
+    line-height: 1.75;
+    font-weight: 300;
+}
+
+/* Steps */
+.clawix-steps {
+    background: var(--white);
+    padding: 3.5rem 1.5rem;
+}
+.clawix-steps__inner {
+    max-width: 1152px;
+    margin: 0 auto;
+}
+.clawix-steps__header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.clawix-steps__header h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 600;
+    color: var(--slate-900);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+.clawix-steps__header p {
+    font-size: 1.125rem;
+    color: var(--slate-600);
+    font-weight: 300;
+}
+.clawix-steps__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.clawix-steps__card {
+    background: var(--white);
+    border: 1px solid transparent;
+    padding: 2.5rem;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.clawix-steps__card:hover {
+    border-color: var(--slate-200);
+    transform: translateY(-12px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+.clawix-steps__num {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--slate-400);
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.04em;
+}
+.clawix-steps__card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--slate-900);
+    margin-bottom: 0.5rem;
+}
+.clawix-steps__card > p {
+    color: var(--slate-600);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 1.25rem;
+}
+.clawix-steps__card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.clawix-steps__card ul li {
+    font-size: 0.875rem;
+    color: var(--slate-600);
+    line-height: 1.6;
+    font-weight: 300;
+    padding-left: 1rem;
+    position: relative;
+}
+.clawix-steps__card ul li::before {
+    content: '\2014';
+    position: absolute;
+    left: 0;
+    color: var(--slate-400);
+    font-size: 0.75rem;
+}
+
+/* Features */
+.clawix-features {
+    background: var(--white);
+    padding: 3.5rem 1.5rem;
+}
+.clawix-features__inner {
+    max-width: 1152px;
+    margin: 0 auto;
+}
+.clawix-features__header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.clawix-features__header h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 600;
+    color: var(--slate-900);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+.clawix-features__header p {
+    font-size: 1.125rem;
+    color: var(--slate-600);
+    font-weight: 300;
+}
+.clawix-features__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.clawix-features__card {
+    background: var(--white);
+    border: 1px solid transparent;
+    padding: 3rem;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.clawix-features__card:hover {
+    border-color: var(--slate-200);
+    transform: translateY(-12px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+.clawix-features__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--slate-900);
+}
+.clawix-features__icon svg { width: 1.75rem; height: 1.75rem; }
+.clawix-features__card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--slate-900);
+    margin-bottom: 1rem;
+}
+.clawix-features__card p {
+    color: var(--slate-600);
+    line-height: 1.7;
+    font-size: 0.9375rem;
+    font-weight: 300;
+}
+
+/* Workbook */
+.clawix-workbook {
+    background: var(--white);
+    padding: 3.5rem 1.5rem;
+}
+.clawix-workbook__inner {
+    max-width: 1152px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+}
+.clawix-workbook__content h2 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 600;
+    color: var(--slate-900);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+}
+.clawix-workbook__content > p {
+    font-size: 1.0625rem;
+    color: var(--slate-600);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+.clawix-workbook__content ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.clawix-workbook__content ul li {
+    font-size: 0.9375rem;
+    color: var(--slate-600);
+    line-height: 1.6;
+    font-weight: 300;
+}
+.clawix-workbook__content ul li strong {
+    color: var(--slate-900);
+    font-weight: 500;
+}
+.clawix-workbook__extra {
+    font-size: 0.875rem !important;
+    color: var(--slate-500) !important;
+    font-style: italic;
+}
+
+/* Workbook mock */
+.clawix-workbook__mock {
+    background: var(--slate-50);
+    border: 1px solid var(--slate-200);
+    font-size: 0.8125rem;
+    overflow: hidden;
+}
+.clawix-workbook__mock-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.875rem 1.25rem;
+    border-bottom: 1px solid var(--slate-200);
+    background: var(--white);
+}
+.clawix-workbook__mock-title {
+    font-weight: 600;
+    color: var(--slate-900);
+    font-size: 0.8125rem;
+}
+.clawix-workbook__mock-status {
+    font-size: 0.6875rem;
+    color: #16a34a;
+    font-weight: 500;
+}
+.clawix-workbook__mock-row {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr auto auto;
+    gap: 1rem;
+    padding: 0.625rem 1.25rem;
+    border-bottom: 1px solid var(--slate-100);
+    align-items: center;
+}
+.clawix-workbook__mock-row:last-of-type {
+    border-bottom: none;
+}
+.clawix-workbook__mock-row--approval {
+    background: #fffbeb;
+}
+.clawix-workbook__mock-time {
+    font-size: 0.6875rem;
+    color: var(--slate-400);
+    font-variant-numeric: tabular-nums;
+}
+.clawix-workbook__mock-action {
+    font-size: 0.75rem;
+    color: var(--slate-700);
+}
+.clawix-workbook__mock-tag {
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.15rem 0.5rem;
+}
+.clawix-workbook__mock-tag--read { color: #2563eb; }
+.clawix-workbook__mock-tag--write { color: #d97706; }
+.clawix-workbook__mock-tag--pending { color: #dc2626; }
+.clawix-workbook__mock-cost {
+    font-size: 0.6875rem;
+    color: var(--slate-500);
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+}
+.clawix-workbook__mock-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid var(--slate-200);
+    font-size: 0.6875rem;
+    color: var(--slate-500);
+    background: var(--white);
+}
+
+/* Pricing */
+.clawix-pricing {
+    background: var(--white);
+    padding: 3.5rem 1.5rem;
+}
+.clawix-pricing__inner {
+    max-width: 1152px;
+    margin: 0 auto;
+}
+.clawix-pricing__header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.clawix-pricing__header h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 600;
+    color: var(--slate-900);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+.clawix-pricing__header p {
+    font-size: 1.125rem;
+    color: var(--slate-600);
+    font-weight: 300;
+}
+.clawix-pricing__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.clawix-pricing__card {
+    background: var(--white);
+    border: 1px solid var(--slate-200);
+    padding: 2.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.clawix-pricing__card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+.clawix-pricing__card--featured {
+    border-color: var(--slate-900);
+}
+.clawix-pricing__card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--slate-900);
+    margin-bottom: 1rem;
+}
+.clawix-pricing__amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--slate-900);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+.clawix-pricing__amount span {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--slate-500);
+}
+.clawix-pricing__desc {
+    font-size: 0.875rem;
+    color: var(--slate-600);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+.clawix-pricing__card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.clawix-pricing__card ul li {
+    font-size: 0.875rem;
+    color: var(--slate-600);
+    font-weight: 300;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.5;
+}
+.clawix-pricing__card ul li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--slate-900);
+    font-size: 0.75rem;
+}
+.clawix-pricing__note {
+    font-size: 0.75rem;
+    color: var(--slate-500);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+.clawix-pricing__coming-soon {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--slate-400);
+    cursor: default;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* CTA */
+.clawix-cta {
+    background: var(--white);
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+.clawix-cta__inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.clawix-cta__content h2 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 600;
+    color: var(--slate-900);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+.clawix-cta__content p {
+    font-size: 1.0625rem;
+    color: var(--slate-600);
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+.clawix-cta__content .contact__cta {
+    display: inline-flex;
+    background: var(--white);
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: var(--slate-900);
+    padding: 1rem 2.5rem;
+    gap: 0.5rem;
+    align-items: center;
+    transition: border-color 0.2s;
+}
+.clawix-cta__content .contact__cta:hover { border-color: var(--slate-200); }
+.clawix-cta__content .contact__cta svg { width: 1.25rem; height: 1.25rem; }
+
+/* Waitlist Modal */
+.clawix-modal__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+.clawix-modal {
+    background: var(--white);
+    padding: 3rem;
+    max-width: 420px;
+    width: 100%;
+    position: relative;
+}
+.clawix-modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--slate-400);
+    padding: 0.25rem;
+    transition: color 0.2s;
+}
+.clawix-modal__close:hover { color: var(--slate-900); }
+.clawix-modal__close svg { width: 1.25rem; height: 1.25rem; }
+.clawix-modal h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--slate-900);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+}
+.clawix-modal > p {
+    font-size: 0.9375rem;
+    color: var(--slate-600);
+    font-weight: 300;
+    margin-bottom: 1.75rem;
+    line-height: 1.6;
+}
+.clawix-modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+}
+.clawix-modal__form input {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.9375rem;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--slate-200);
+    background: var(--white);
+    color: var(--slate-900);
+    outline: none;
+    transition: border-color 0.2s;
+    font-weight: 300;
+}
+.clawix-modal__form input::placeholder {
+    color: var(--slate-400);
+}
+.clawix-modal__form input:focus {
+    border-color: var(--slate-900);
+}
+.clawix-modal__form button {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding: 0.875rem 1rem;
+    background: var(--slate-900);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.clawix-modal__form button:hover {
+    background: var(--slate-800);
+}
+.clawix-modal__error {
+    font-size: 0.8125rem;
+    color: #dc2626;
+    margin: 0;
+}
+.clawix-modal__success {
+    text-align: center;
+    padding: 1rem 0;
+}
+.clawix-modal__success h3 {
+    margin-bottom: 0.5rem;
+}
+.clawix-modal__success p {
+    color: var(--slate-600);
+    font-size: 0.9375rem;
+    font-weight: 300;
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     /* Hero */
@@ -602,6 +1160,17 @@ body {
     .insights__grid { grid-template-columns: 1fr; gap: 1rem; }
     .insights__card { max-width: 480px; margin: 0 auto; width: 100%; }
 
+    /* Clawix */
+    .clawix-steps__grid { grid-template-columns: 1fr; gap: 1rem; }
+    .clawix-steps__card { max-width: 480px; margin: 0 auto; width: 100%; }
+    .clawix-features__grid { grid-template-columns: 1fr; gap: 1rem; }
+    .clawix-features__card { max-width: 480px; margin: 0 auto; width: 100%; }
+    .clawix-workbook__inner { grid-template-columns: 1fr; gap: 2rem; }
+    .clawix-workbook__visual { order: -1; }
+    .clawix-pricing__grid { grid-template-columns: 1fr; }
+    .clawix-workbook__mock-row { grid-template-columns: 3.5rem 1fr auto; }
+    .clawix-workbook__mock-cost { display: none; }
+
     /* Footer */
     .footer__grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
 }
@@ -625,6 +1194,11 @@ body {
     .services__header, .insights__header { margin-bottom: 1.5rem; }
     .services__card, .insights__card { max-width: none; }
     .lead__cta { width: 100%; justify-content: center; }
+
+    /* Clawix */
+    .clawix-intro, .clawix-steps, .clawix-features, .clawix-workbook, .clawix-pricing, .clawix-cta { padding: 2rem 1rem; }
+    .clawix-steps__card, .clawix-features__card { max-width: none; }
+    .clawix-pricing__card { padding: 1.75rem; }
 
     /* Footer */
     .footer { padding: 2rem 1rem; }

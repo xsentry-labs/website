@@ -55,6 +55,20 @@ export default function HomePage() {
               </div>
             </Link>
 
+            <Link to="/clawix" className="ventures__card">
+              <div className="ventures__card-img ventures__card-img--placeholder">
+                <span>🦞</span>
+              </div>
+              <div className="ventures__card-body">
+                <h3>clawix.ai</h3>
+                <p>OpenClaw agents running safely in the cloud — BYOM, zero-trust, fully auditable.</p>
+                <span className="ventures__card-arrow">
+                  Explore
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                </span>
+              </div>
+            </Link>
+
             <div className="ventures__card">
               <div className="ventures__card-img">
                 <img src="/images/venture-datawolf.jpg" alt="Wolf silhouette composed of data streams and neural network nodes" />
