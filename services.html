@@ -66,55 +66,39 @@
 
         /* ========== HERO ========== */
         .hero {
-            position: relative;
-            background: var(--white);
-            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: radial-gradient(circle at 90% 10%, #f1f5f9 0%, #ffffff 40%);
+        }
+        .hero__container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2rem;
+            align-items: center;
+            padding: 0 2.5rem;
+        }
+        .hero__content {
+            z-index: 20;
         }
         .hero__illustration {
-            width: 100%;
-            display: block;
+            position: relative;
+            perspective: 1000px;
         }
         .hero__illustration img {
-            width: 100%;
+            width: 110%;
             height: auto;
-            display: block;
-            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 20px 50px rgba(0,0,0,0.05));
+            animation: professionalFloat 8s ease-in-out infinite;
+            transform-style: preserve-3d;
         }
-        @keyframes float {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(1deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
-        }
-        /* Overlay bar - sits on top of the illustration */
-        .hero__overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 1.75rem 2.5rem;
-        }
-        .hero__brand {
-            display: flex;
-            flex-direction: column;
-        }
-        .hero__title {
-            font-size: clamp(1rem, 1.6vw, 1.25rem);
-            font-weight: 600;
-            color: var(--slate-900);
-            line-height: 1.3;
-            letter-spacing: -0.01em;
-        }
-        .hero__tagline {
-            margin-top: 1.5rem;
-            font-size: clamp(0.95rem, 1.4vw, 1.1rem);
-            font-weight: 400;
-            font-style: italic;
-            color: var(--slate-900);
-            line-height: 1.4;
+        @keyframes professionalFloat {
+            0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+            33% { transform: translateY(-15px) rotateX(2deg) rotateY(-1deg); }
+            66% { transform: translateY(-5px) rotateX(-1deg) rotateY(2deg); }
         }
         .hero__nav {
             display: flex;
@@ -126,6 +110,10 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(0, 0, 0, 0.06);
             border-radius: 100px;
+            position: fixed;
+            top: 1.75rem;
+            right: 2.5rem;
+            z-index: 50;
         }
         .hero__nav a {
             color: var(--slate-600);
@@ -141,17 +129,24 @@
             background: rgba(0, 0, 0, 0.05);
         }
 
+        @media (max-width: 992px) {
+            .hero__container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 4rem;
+            }
+            .hero__illustration img {
+                width: 100%;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
         @media (max-width: 768px) {
-            .hero__overlay { padding: 1rem 1rem; }
-            .hero__title { font-size: 0.875rem; }
-            .hero__tagline { margin-top: 0.5rem; font-size: 0.8rem; }
-            .hero__nav { gap: 0; padding: 0.3rem 0.35rem; }
+            .hero__nav { top: 1rem; right: 1rem; gap: 0; padding: 0.3rem 0.35rem; }
             .hero__nav a { font-size: 0.7rem; padding: 0.25rem 0.5rem; }
         }
         @media (max-width: 480px) {
-            .hero__overlay { flex-direction: column; gap: 0.5rem; }
-            .hero__nav { align-self: flex-start; flex-wrap: wrap; }
-            .hero__illustration img { min-height: 200px; object-fit: cover; }
+            .hero__nav { flex-wrap: wrap; }
         }
 
         /* ========== ABOUT ========== */
@@ -464,20 +459,27 @@
 
     <!-- ========== HERO ========== -->
     <section class="hero">
-        <div class="hero__overlay">
-            <div class="hero__brand">
-                <h1 class="hero__title">xsentry labs</h1>
-                <p class="hero__tagline">World-class software, at your fingertips.</p>
+        <nav class="hero__nav" aria-label="Main navigation">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#insights">Insights</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="hero__container">
+            <div class="hero__content">
+                <h1 style="font-size: 4rem; margin-bottom: 1rem;">xsentry labs</h1>
+                <p style="font-style: normal; font-size: 1.25rem; opacity: 0.8;">
+                    World-class software, at your fingertips.
+                </p>
+                <div style="margin-top: 2rem;">
+                    <a href="#services" class="lead__cta">explore services</a>
+                </div>
             </div>
-            <nav class="hero__nav" aria-label="Main navigation">
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="#insights">Insights</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-        <div class="hero__illustration">
-            <img src="images/test.png" alt="London skyline pen and ink illustration">
+
+            <div class="hero__illustration">
+                <img src="images/test.png" alt="London skyline pen and ink illustration">
+            </div>
         </div>
     </section>
 
