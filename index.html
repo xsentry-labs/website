@@ -3,317 +3,605 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xsentry Labs — Applied Intelligence</title>
-    <meta name="description" content="A research lab building intelligent systems that understand, adapt, and create.">
+    <title>Xsentry Labs Services — Software Engineering, App &amp; Web Development</title>
+    <meta name="description" content="Xsentry Labs is a new-age engineering firm building software, applications, and digital products with precision and modern craft.">
+    <meta name="keywords" content="software engineering, application development, web development, Xsentry Labs, AI development">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://services.xsentrylabs.com">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Xsentry Labs — Applied Intelligence">
-    <meta property="og:description" content="A research lab building intelligent systems that understand, adapt, and create.">
+    <meta property="og:title" content="Xsentry Labs Services — New-Age Engineering">
+    <meta property="og:description" content="Software engineering, application development, and web development — built with precision and modern craft.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://services.xsentrylabs.com">
 
-    <!-- Fonts -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Xsentry Labs Services — New-Age Engineering">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Xsentry Labs Services",
+        "description": "New-age engineering firm specializing in software engineering, application development, and web development.",
+        "url": "https://services.xsentrylabs.com",
+        "parentOrganization": { "@type": "Organization", "name": "Xsentry Labs", "url": "https://xsentrylabs.com" },
+        "serviceType": ["Software Engineering", "Application Development", "Web Development"],
+        "areaServed": "Worldwide"
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --white: #ffffff;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0a;
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 18px;
-            line-height: 1.7;
-            letter-spacing: -0.003em;
-            position: relative;
-            overflow-x: hidden;
+            font-family: 'Noto Sans', sans-serif;
+            background: var(--white);
+            color: var(--slate-600);
+            font-size: 16px;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
-        /* Neural network canvas background */
-        #neuralCanvas {
-            position: fixed;
+        ::selection { background: var(--slate-900); color: var(--white); }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            background: var(--white);
+            overflow: hidden;
+        }
+        .hero__illustration {
+            width: 100%;
+            display: block;
+        }
+        .hero__illustration img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        /* Overlay bar — sits on top of the illustration */
+        .hero__overlay {
+            position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            opacity: 0.3;
+            right: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1.75rem 2.5rem;
         }
-
-        /* Main content wrapper */
-        main {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Section container */
-        section {
-            position: relative;
+        .hero__brand {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 3rem 2rem;
         }
-
-        .content {
-            max-width: 720px;
-            width: 100%;
-        }
-
-        /* Typography */
-        h1, h2, h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.95);
-        }
-
-        /* HERO SECTION */
-        #hero {
-            min-height: 100vh;
-            text-align: center;
-        }
-
-        #hero .content {
-            max-width: 900px;
-        }
-
-        #hero h1 {
-            font-size: clamp(36px, 4.5vw, 48px);
-            font-weight: 300;
-            letter-spacing: 0.08em;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 181, 127, 0.85) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* IDEA SECTION */
-        #the-idea {
-            text-align: left;
-            padding: 4rem 2rem;
-        }
-
-        #the-idea p {
-            font-size: clamp(18px, 2vw, 21px);
-            line-height: 1.75;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.003em;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.75);
-        }
-
-        #the-idea p em {
-            font-style: italic;
-            color: rgba(255, 181, 127, 0.85);
-        }
-
-        /* CLOSING SECTION */
-        #closing {
-            text-align: center;
-            padding: 4rem 2rem 3rem;
-        }
-
-        #closing h2 {
-            font-size: clamp(20px, 2.5vw, 26px);
-            line-height: 1.5;
-            font-weight: 300;
+        .hero__title {
+            font-size: clamp(1rem, 1.6vw, 1.25rem);
+            font-weight: 600;
+            color: var(--slate-900);
+            line-height: 1.3;
             letter-spacing: -0.01em;
         }
-
-        /* Footer */
-        footer {
-            margin-top: 2rem;
-            padding: 2rem 2rem;
-            text-align: center;
-            font-size: 13px;
-            opacity: 0.3;
-            letter-spacing: 0;
+        .hero__tagline {
+            margin-top: 1.5rem;
+            font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+            font-weight: 400;
+            font-style: italic;
+            color: var(--slate-900);
+            line-height: 1.4;
         }
-
-        footer a {
-            color: rgba(255, 255, 255, 0.4);
+        .hero__nav {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.4rem 0.5rem;
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 100px;
+        }
+        .hero__nav a {
+            color: var(--slate-600);
             text-decoration: none;
-            margin: 0 0.5rem;
-            transition: opacity 0.3s;
+            font-size: 0.8125rem;
+            font-weight: 400;
+            padding: 0.35rem 0.9rem;
+            border-radius: 100px;
+            transition: color 0.2s, background 0.2s;
+        }
+        .hero__nav a:hover {
+            color: var(--slate-900);
+            background: rgba(0, 0, 0, 0.05);
         }
 
-        footer a:hover {
-            opacity: 1;
-        }
-
-        /* Mobile responsiveness */
         @media (max-width: 768px) {
-            body {
-                font-size: 17px;
-            }
+            .hero__overlay { padding: 1.25rem 1.25rem; }
+            .hero__title { font-size: 0.875rem; max-width: 180px; }
+            .hero__nav { gap: 0; padding: 0.3rem 0.35rem; }
+            .hero__nav a { font-size: 0.75rem; padding: 0.3rem 0.65rem; }
+        }
+        @media (max-width: 480px) {
+            .hero__overlay { flex-direction: column; gap: 0.75rem; }
+            .hero__nav { align-self: flex-start; }
+        }
 
-            section {
-                padding: 2rem 1.5rem;
-            }
+        /* ========== ABOUT ========== */
+        .about {
+            background: var(--white);
+            padding: 3.5rem 1.5rem;
+        }
+        .about__inner {
+            max-width: 1152px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about__visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about__visual img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: block;
+        }
+        .about__content h2 {
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+        .about__content p {
+            font-size: 1.0625rem;
+            color: var(--slate-600);
+            line-height: 1.75;
+            margin-bottom: 1.25rem;
+            font-weight: 300;
+        }
 
-            #hero h1 {
-                font-size: clamp(30px, 6.5vw, 40px);
-            }
+        /* ========== SERVICES ========== */
+        .services {
+            background: var(--white);
+            padding: 3.5rem 1.5rem;
+        }
+        .services__inner {
+            max-width: 1152px;
+            margin: 0 auto;
+        }
+        .services__header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .services__header h2 {
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        .services__header p {
+            font-size: 1.125rem;
+            color: var(--slate-600);
+            font-weight: 300;
+        }
+        .services__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .services__card {
+            background: var(--white);
+            border: 1px solid transparent;
+            padding: 3rem;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+        .services__card:hover { border-color: var(--slate-200); }
+        .services__card-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            background: var(--slate-900);
+            margin-bottom: 1.5rem;
+        }
+        .services__card-icon svg { width: 2rem; height: 2rem; color: var(--white); }
+        .services__card-icon--img {
+            background: none;
+            width: 5rem;
+            height: 5rem;
+        }
+        .services__card-icon--img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .services__card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 1rem;
+        }
+        .services__card p {
+            color: var(--slate-600);
+            line-height: 1.7;
+            font-size: 0.9375rem;
+            font-weight: 300;
+        }
 
-            #the-idea p {
-                font-size: clamp(17px, 4.5vw, 19px);
-                line-height: 1.7;
-            }
+        /* ========== LEAD MAGNET ========== */
+        .lead {
+            background: var(--white);
+            padding: 3.5rem 1.5rem;
+        }
+        .lead__inner {
+            max-width: 1152px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .lead__content h2 {
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+        .lead__content p {
+            font-size: 1.0625rem;
+            color: var(--slate-600);
+            line-height: 1.75;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        .lead__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            background: var(--slate-900);
+            color: var(--white);
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.0625rem;
+            font-weight: 500;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .lead__cta:hover { background: var(--slate-800); }
+        .lead__cta svg { width: 1.25rem; height: 1.25rem; }
+        .lead__visual {
+            display: flex;
+            justify-content: center;
+        }
+        .lead__visual img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: block;
+        }
 
-            #closing h2 {
-                font-size: clamp(18px, 5vw, 22px);
-            }
+        /* ========== CONTENT / INSIGHTS ========== */
+        .insights {
+            background: var(--white);
+            padding: 3.5rem 1.5rem;
+        }
+        .insights__inner {
+            max-width: 1152px;
+            margin: 0 auto;
+        }
+        .insights__header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .insights__header h2 {
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        .insights__header p {
+            font-size: 1.125rem;
+            color: var(--slate-600);
+            font-weight: 300;
+        }
+        .insights__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .insights__card {
+            background: var(--white);
+            border: 1px solid transparent;
+            padding: 2rem;
+            transition: border-color 0.2s;
+        }
+        .insights__card:hover { border-color: var(--slate-200); }
+        .insights__card-date {
+            font-size: 0.8125rem;
+            color: var(--slate-500);
+            margin-bottom: 1rem;
+        }
+        .insights__card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        .insights__card p {
+            color: var(--slate-600);
+            line-height: 1.7;
+            font-size: 0.9375rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        .insights__card a {
+            color: var(--slate-900);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .insights__card a:hover { color: var(--slate-600); }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--white);
+            border-top: 1px solid var(--slate-200);
+            padding: 3rem 1.5rem;
+        }
+        .footer__inner {
+            max-width: 1152px;
+            margin: 0 auto;
+        }
+        .footer__grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .footer__col h4 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 1rem;
+        }
+        .footer__col p {
+            font-size: 0.875rem;
+            color: var(--slate-600);
+            line-height: 1.65;
+            font-weight: 300;
+        }
+        .footer__col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .footer__col ul a {
+            font-size: 0.875rem;
+            color: var(--slate-600);
+            text-decoration: none;
+            transition: color 0.2s;
+            font-weight: 300;
+        }
+        .footer__col ul a:hover { color: var(--slate-900); }
+        .footer__bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--slate-200);
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--slate-500);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .navbar__links { display: none; }
+            .navbar__hamburger { display: block; }
+            .hero { padding: 4rem 1.5rem 5rem; }
+            .proof__stats { grid-template-columns: 1fr; gap: 1.5rem; }
+            .about__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+            .about__visual { order: -1; }
+            .services__grid { grid-template-columns: 1fr; }
+            .lead__inner { grid-template-columns: 1fr; }
+            .lead__visual { order: -1; }
+            .insights__grid { grid-template-columns: 1fr; }
+            .footer__grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .footer__grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Neural network background -->
-    <canvas id="neuralCanvas"></canvas>
 
-    <main>
-        <!-- HERO -->
-        <section id="hero">
-            <div class="content">
-                <h1>Xsentry Labs</h1>
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="hero__overlay">
+            <div class="hero__brand">
+                <h1 class="hero__title">xsentry labs</h1>
+                <p class="hero__tagline">World-class software, at your fingertips.</p>
             </div>
-        </section>
+            <nav class="hero__nav" aria-label="Main navigation">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#insights">Insights</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+        <div class="hero__illustration">
+            <img src="images/test.png" alt="London skyline pen and ink illustration">
+        </div>
+    </section>
 
-        <!-- THE IDEA -->
-        <section id="the-idea">
-            <div class="content">
-                <p>
-                    For years, engineering has been deterministic. A sequence of operations to execute. Protocols to implement. Systems to deploy.
-                </p>
-                <p>
-                    <em>Applied Intelligence</em> changes the equation.
-                </p>
-                <p>
-                    Intelligent systems don't just run anymore, they reason, understand and adapt to uncertainty which drives the co-creation of next-gen solutions.
-                </p>
-                <p>
-                    The shift is inevitable. What we build with it is not.
-                </p>
+    <!-- ========== ABOUT ========== -->
+    <section class="about" id="about">
+        <div class="about__inner">
+            <div class="about__visual">
+                <img src="images/table.png" alt="Architect's drafting table illustration">
             </div>
-        </section>
-
-        <!-- CLOSING -->
-        <section id="closing">
-            <div class="content">
-                <h2>
-                    If this resonates, stay close.
-                </h2>
+            <div class="about__content">
+                <h2>About Us</h2>
+                <p>We are a team of experienced developers and AI specialists who believe in building software the right way — with intelligence at its core.</p>
+                <p>Our mission is to help businesses leverage cutting-edge AI technology to create applications that are faster, smarter, and more efficient.</p>
+                <p>From custom app development to enterprise software solutions, we bring your vision to life with precision and expertise.</p>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        © 2025 Xsentry Labs<br>
-        <a href="#">Privacy</a> · <a href="#">Terms</a>
+    <!-- ========== SERVICES ========== -->
+    <section class="services" id="services">
+        <div class="services__inner">
+            <div class="services__header">
+                <h2>Our Services</h2>
+                <p>Comprehensive development services powered by AI</p>
+            </div>
+            <div class="services__grid">
+                <div class="services__card">
+                    <div class="services__card-icon services__card-icon--img">
+                        <img src="images/mobile.jpg" alt="Mobile phone illustration">
+                    </div>
+                    <h3>Custom App Development</h3>
+                    <p>Native and cross-platform mobile applications built with the latest technologies and AI-powered features.</p>
+                </div>
+                <div class="services__card">
+                    <div class="services__card-icon services__card-icon--img">
+                        <img src="images/soft-dev.jpg" alt="Retro computer illustration">
+                    </div>
+                    <h3>Software Development</h3>
+                    <p>Enterprise-grade software solutions tailored to your business needs, architected for resilience and scale.</p>
+                </div>
+                <div class="services__card">
+                    <div class="services__card-icon services__card-icon--img">
+                        <img src="images/web-dev.jpg" alt="Web development illustration">
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Modern, responsive websites and web applications that perform — every pixel considered, every millisecond earned.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LEAD MAGNET ========== -->
+    <section class="lead" id="contact">
+        <div class="lead__inner">
+            <div class="lead__content">
+                <h2>Ready to Build Something Amazing?</h2>
+                <p>Get a free consultation and discover how AI-native development can transform your business. No commitment required.</p>
+                <a href="mailto:hello@xsentrylabs.com" class="lead__cta">
+                    Book Free Consultation
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="lead__visual">
+                <img src="images/build.jpg" alt="Workspace desk illustration">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INSIGHTS ========== -->
+    <section class="insights" id="insights">
+        <div class="insights__inner">
+            <div class="insights__header">
+                <h2>Latest Insights</h2>
+                <p>Stay updated with our latest thoughts on technology and development</p>
+            </div>
+            <div class="insights__grid">
+                <article class="insights__card">
+                    <div class="insights__card-date">Feb 10, 2026</div>
+                    <h3>How AI is Transforming Software Development</h3>
+                    <p>Discover the latest trends in AI-powered development and how they can benefit your business.</p>
+                    <a href="#">Read more &rarr;</a>
+                </article>
+                <article class="insights__card">
+                    <div class="insights__card-date">Feb 5, 2026</div>
+                    <h3>Building Scalable Applications: Best Practices</h3>
+                    <p>Learn the key principles behind creating applications that grow with your business needs.</p>
+                    <a href="#">Read more &rarr;</a>
+                </article>
+                <article class="insights__card">
+                    <div class="insights__card-date">Jan 28, 2026</div>
+                    <h3>The Future of Web Development</h3>
+                    <p>Exploring emerging technologies and frameworks shaping the future of the web.</p>
+                    <a href="#">Read more &rarr;</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h4>Xsentry Labs</h4>
+                    <p>Building the future with AI-powered development solutions.</p>
+                </div>
+                <div class="footer__col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">App Development</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Software Development</a></li>
+                        <li><a href="#">AI Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#insights">Insights</a></li>
+                        <li><a href="https://xsentrylabs.com">Labs</a></li>
+                        <li><a href="mailto:hello@xsentrylabs.com">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                &copy; 2025 Xsentry Labs. All rights reserved.
+            </div>
+        </div>
     </footer>
 
-    <script>
-        // Neural network visualization - slower, more ambient
-        const canvas = document.getElementById('neuralCanvas');
-        const ctx = canvas.getContext('2d');
-
-        let width = canvas.width = window.innerWidth;
-        let height = canvas.height = window.innerHeight;
-
-        window.addEventListener('resize', () => {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            initNodes();
-        });
-
-        class Node {
-            constructor() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                // Slower movement
-                this.vx = (Math.random() - 0.5) * 0.15;
-                this.vy = (Math.random() - 0.5) * 0.15;
-                this.radius = 1;
-            }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-
-                if (this.x < 0 || this.x > width) this.vx *= -1;
-                if (this.y < 0 || this.y > height) this.vy *= -1;
-            }
-
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                // Soft orange nodes
-                ctx.fillStyle = 'rgba(255, 181, 127, 0.5)';
-                ctx.fill();
-            }
-        }
-
-        const nodes = [];
-        const nodeCount = 40; // Fewer nodes for cleaner look
-
-        function initNodes() {
-            nodes.length = 0;
-            for (let i = 0; i < nodeCount; i++) {
-                nodes.push(new Node());
-            }
-        }
-
-        initNodes();
-
-        function drawConnections() {
-            const maxDistance = 200;
-
-            for (let i = 0; i < nodes.length; i++) {
-                for (let j = i + 1; j < nodes.length; j++) {
-                    const dx = nodes[i].x - nodes[j].x;
-                    const dy = nodes[i].y - nodes[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < maxDistance) {
-                        // Soft orange connections
-                        const opacity = (1 - distance / maxDistance) * 0.15;
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(255, 181, 127, ${opacity})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(nodes[i].x, nodes[i].y);
-                        ctx.lineTo(nodes[j].x, nodes[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        function animate() {
-            ctx.fillStyle = 'rgba(10, 10, 10, 1)';
-            ctx.fillRect(0, 0, width, height);
-
-            drawConnections();
-
-            nodes.forEach(node => {
-                node.update();
-                node.draw();
-            });
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-    </script>
 </body>
 </html>
-
