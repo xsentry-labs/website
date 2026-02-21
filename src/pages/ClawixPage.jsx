@@ -8,7 +8,7 @@ export default function ClawixPage() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    document.title = 'Clawix — OpenClaw Agents Running Safely in the Cloud'
+    document.title = 'Clawix — Your Personal AI Assistant, Always On'
   }, [])
 
   useEffect(() => {
@@ -38,12 +38,12 @@ export default function ClawixPage() {
 
   return (
     <>
-      {/* Hero (text-only, no image yet) */}
+      {/* Hero */}
       <section className="hero">
         <div className="hero__overlay">
           <div className="hero__brand">
-            <h1 className="hero__title">clawix.ai</h1>
-            <p className="hero__tagline">OpenClaw agents running safely in the cloud.</p>
+            <h1 className="hero__title">clawix</h1>
+            <p className="hero__tagline">Your personal AI assistant. Dedicated to you. Always on.</p>
           </div>
           <nav className="hero__nav" aria-label="Main navigation">
             <a href="#how-it-works">How It Works</a>
@@ -57,11 +57,12 @@ export default function ClawixPage() {
       {/* Intro */}
       <section className="clawix-intro">
         <div className="clawix-intro__inner">
-          <h2>Your agent. Your model. Your rules.</h2>
+          <h2>Not a shared chatbot. Your own private instance.</h2>
           <p>
-            Clawix runs your OpenClaw agent in the cloud with simple, sensible controls —
-            allowlisted domains, allowed tools, read-only defaults, and full logs of everything.
-            Bring your own model, your own keys, and we handle the rest.
+            Clawix gives you a personal AI assistant that runs 24/7 on a dedicated VM we
+            maintain for you. Your own isolated environment, your own persistent memory,
+            your own conversation history. It lives in your Slack, your Telegram, or wherever
+            you work — and only you can talk to it, unless you decide otherwise.
           </p>
         </div>
       </section>
@@ -71,42 +72,43 @@ export default function ClawixPage() {
         <div className="clawix-steps__inner">
           <div className="clawix-steps__header">
             <h2>How it works</h2>
-            <p>Three steps. That's it.</p>
+            <p>You sign up. We spin it up. You start talking.</p>
           </div>
           <div className="clawix-steps__grid">
             <div className="clawix-steps__card">
               <div className="clawix-steps__num">01</div>
-              <h3>Onboard</h3>
-              <p>Connect your LLM, pick your tools, set your limits.</p>
+              <h3>Configure</h3>
+              <p>Pick your model and connect your channels.</p>
               <ul>
-                <li>Connect your model — OpenAI, Anthropic, Azure, or any compatible endpoint</li>
-                <li>Choose which tools the agent can use</li>
-                <li>Mark tools as read-only or read-write</li>
-                <li>Allowlist the domains the agent can reach</li>
-                <li>Set a spending limit</li>
+                <li>Choose your LLM provider — Anthropic, OpenAI, Gemini, or more</li>
+                <li>Connect Slack, Telegram, or both</li>
+                <li>Set a custom persona and system prompt</li>
+                <li>Choose which built-in tools to enable</li>
+                <li>Optionally invite others to talk to your agent</li>
               </ul>
             </div>
             <div className="clawix-steps__card">
               <div className="clawix-steps__num">02</div>
-              <h3>Deploy</h3>
-              <p>One click. Your agent runs 24/7 in our cloud.</p>
+              <h3>We spin it up</h3>
+              <p>Your dedicated instance is ready in seconds.</p>
               <ul>
-                <li>Dedicated container, always on</li>
-                <li>Agent gets its own email address and phone number</li>
-                <li>Connected to your channels — Slack, Telegram, WhatsApp</li>
-                <li>Only talks to the domains you allowed</li>
-                <li>Only uses the tools you enabled</li>
+                <li>Isolated VM — your agent, your data, nobody else's</li>
+                <li>Dedicated database for memory, notes, and history</li>
+                <li>Always on — no laptop to keep running</li>
+                <li>We handle uptime, updates, and infrastructure</li>
+                <li>Your keys and data never touch shared resources</li>
               </ul>
             </div>
             <div className="clawix-steps__card">
               <div className="clawix-steps__num">03</div>
-              <h3>Work with it</h3>
-              <p>Use your agent. Come back to see everything it's done.</p>
+              <h3>Start talking</h3>
+              <p>Your assistant is ready — ask it anything.</p>
               <ul>
-                <li>Action log — every action, every tool call, every response</li>
-                <li>Human-in-the-loop — write operations flag for your approval</li>
-                <li>Cost tracking — real-time spend, per-action cost, running totals</li>
-                <li>Full logs — every request, searchable and exportable</li>
+                <li>Message it in Slack or Telegram like a colleague</li>
+                <li>It searches the web, checks stocks, saves notes</li>
+                <li>It remembers things you tell it across sessions</li>
+                <li>Streaming replies — tokens appear as they're generated</li>
+                <li>Full action log of everything it's done</li>
               </ul>
             </div>
           </div>
@@ -117,49 +119,69 @@ export default function ClawixPage() {
       <section className="clawix-features" id="features">
         <div className="clawix-features__inner">
           <div className="clawix-features__header">
-            <h2>What you get</h2>
-            <p>Simple controls. Full visibility. No surprises.</p>
+            <h2>Built for one person. You.</h2>
+            <p>Private by default. Persistent. Always available.</p>
           </div>
           <div className="clawix-features__grid">
             <div className="clawix-features__card">
               <div className="clawix-features__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
               </div>
-              <h3>Secure by Default</h3>
-              <p>Tools default to read-only. Write access is opt-in and requires your approval. Agents only reach domains you allowlist. Everything else is off.</p>
+              <h3>Dedicated VM</h3>
+              <p>Your agent runs in its own isolated environment. No shared compute, no noisy neighbours. Your instance is yours alone — unless you invite someone in.</p>
             </div>
             <div className="clawix-features__card">
               <div className="clawix-features__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
               </div>
-              <h3>BYOM Flexibility</h3>
-              <p>Bring your own model. OpenAI, Anthropic, Azure, Google, or any compatible endpoint. Your keys, your costs, your choice. Switch anytime.</p>
+              <h3>Your Own Memory</h3>
+              <p>A dedicated database stores your notes, conversation history, and saved context. Your agent remembers what you tell it — and that data never mingles with anyone else's.</p>
             </div>
             <div className="clawix-features__card">
               <div className="clawix-features__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><polyline points="10 9 9 9 8 9" /></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               </div>
-              <h3>Fully Auditable</h3>
-              <p>Every action, every token, every dollar — logged and visible. A clean workbook of everything your agent has done. Exportable for your records.</p>
+              <h3>Works Where You Do</h3>
+              <p>Slack, Telegram, or both. Your assistant lives inside the tools you already use — no new app to open, no browser tab to keep around.</p>
+            </div>
+            <div className="clawix-features__card">
+              <div className="clawix-features__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <h3>Bring Your Model</h3>
+              <p>Connect your own API key from Anthropic, OpenAI, OpenRouter, Gemini, or Together. You choose the model, you own the costs. Switch anytime from your dashboard.</p>
+            </div>
+            <div className="clawix-features__card">
+              <div className="clawix-features__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              </div>
+              <h3>Built-In Tools</h3>
+              <p>Web search, real-time stock quotes, notes and memory, file sandbox, reminders. Enable the tools you want — your agent will use them automatically.</p>
+            </div>
+            <div className="clawix-features__card">
+              <div className="clawix-features__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <h3>Full Action Log</h3>
+              <p>Every tool call, every reply, every event — logged and searchable. A clear record of everything your assistant has done, always accessible from your dashboard.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Workbook Preview */}
-      <section className="clawix-workbook">
+      {/* Action Log Preview */}
+      <section className="clawix-workbook" id="action-log">
         <div className="clawix-workbook__inner">
           <div className="clawix-workbook__content">
-            <h2>Not a dashboard. A workbook.</h2>
-            <p>A simple, chronological log of everything your agent has done. See what happened, when, what it cost, and whether it needed your approval.</p>
+            <h2>Everything your assistant does. Logged.</h2>
+            <p>A chronological record of every action your agent takes — tool calls, replies, reminders fired. You always know what it's done and when it did it.</p>
             <ul>
               <li><strong>Timestamp</strong> — when it happened</li>
               <li><strong>Action</strong> — what the agent did</li>
-              <li><strong>Tag</strong> — read / write / approved / blocked</li>
-              <li><strong>Cost</strong> — what that action cost</li>
-              <li><strong>Running total</strong> — cumulative spend</li>
+              <li><strong>Type</strong> — tool call, reply, or system event</li>
+              <li><strong>Channel</strong> — which channel triggered the action</li>
             </ul>
-            <p className="clawix-workbook__extra">Plus pending approvals for write operations, payment history, invoices, and agent status.</p>
+            <p className="clawix-workbook__extra">Searchable from your dashboard. Exportable any time. Retained for the life of your instance.</p>
           </div>
           <div className="clawix-workbook__visual">
             <div className="clawix-workbook__mock">
@@ -168,38 +190,38 @@ export default function ClawixPage() {
                 <span className="clawix-workbook__mock-status">● Running</span>
               </div>
               <div className="clawix-workbook__mock-row">
-                <span className="clawix-workbook__mock-time">14:32:01</span>
-                <span className="clawix-workbook__mock-action">Read inbox — 3 new messages</span>
-                <span className="clawix-workbook__mock-tag clawix-workbook__mock-tag--read">read</span>
-                <span className="clawix-workbook__mock-cost">$0.002</span>
+                <span className="clawix-workbook__mock-time">09:14:03</span>
+                <span className="clawix-workbook__mock-action">web_search "AAPL earnings Q1 2025"</span>
+                <span className="clawix-workbook__mock-tag clawix-workbook__mock-tag--read">tool</span>
+                <span className="clawix-workbook__mock-cost">slack</span>
               </div>
               <div className="clawix-workbook__mock-row">
-                <span className="clawix-workbook__mock-time">14:32:08</span>
-                <span className="clawix-workbook__mock-action">Summarized email from ops@acme.co</span>
-                <span className="clawix-workbook__mock-tag clawix-workbook__mock-tag--read">read</span>
-                <span className="clawix-workbook__mock-cost">$0.004</span>
+                <span className="clawix-workbook__mock-time">09:14:05</span>
+                <span className="clawix-workbook__mock-action">stock_quote AAPL</span>
+                <span className="clawix-workbook__mock-tag clawix-workbook__mock-tag--read">tool</span>
+                <span className="clawix-workbook__mock-cost">slack</span>
               </div>
               <div className="clawix-workbook__mock-row">
-                <span className="clawix-workbook__mock-time">14:32:15</span>
-                <span className="clawix-workbook__mock-action">Draft reply to ops@acme.co</span>
-                <span className="clawix-workbook__mock-tag clawix-workbook__mock-tag--write">write</span>
-                <span className="clawix-workbook__mock-cost">$0.006</span>
+                <span className="clawix-workbook__mock-time">09:14:07</span>
+                <span className="clawix-workbook__mock-action">Replied to @nihal in #general</span>
+                <span className="clawix-workbook__mock-tag clawix-workbook__mock-tag--write">reply</span>
+                <span className="clawix-workbook__mock-cost">slack</span>
+              </div>
+              <div className="clawix-workbook__mock-row">
+                <span className="clawix-workbook__mock-time">11:00:00</span>
+                <span className="clawix-workbook__mock-action">schedule_reminder "standup in 15m"</span>
+                <span className="clawix-workbook__mock-tag clawix-workbook__mock-tag--read">tool</span>
+                <span className="clawix-workbook__mock-cost">slack</span>
               </div>
               <div className="clawix-workbook__mock-row clawix-workbook__mock-row--approval">
-                <span className="clawix-workbook__mock-time">14:32:15</span>
-                <span className="clawix-workbook__mock-action">⏳ Awaiting your approval to send</span>
-                <span className="clawix-workbook__mock-tag clawix-workbook__mock-tag--pending">pending</span>
-                <span className="clawix-workbook__mock-cost">—</span>
-              </div>
-              <div className="clawix-workbook__mock-row">
-                <span className="clawix-workbook__mock-time">14:33:42</span>
-                <span className="clawix-workbook__mock-action">Fetched pricing from api.vendor.io</span>
-                <span className="clawix-workbook__mock-tag clawix-workbook__mock-tag--read">read</span>
-                <span className="clawix-workbook__mock-cost">$0.003</span>
+                <span className="clawix-workbook__mock-time">11:15:00</span>
+                <span className="clawix-workbook__mock-action">Reminder fired — sent to @nihal</span>
+                <span className="clawix-workbook__mock-tag clawix-workbook__mock-tag--pending">system</span>
+                <span className="clawix-workbook__mock-cost">slack</span>
               </div>
               <div className="clawix-workbook__mock-footer">
-                <span>5 actions today</span>
-                <span>Total: $0.015</span>
+                <span>5 events today</span>
+                <span>Instance: dedicated</span>
               </div>
             </div>
           </div>
@@ -210,59 +232,56 @@ export default function ClawixPage() {
       <section className="clawix-pricing" id="pricing">
         <div className="clawix-pricing__inner">
           <div className="clawix-pricing__header">
-            <h2>Pricing</h2>
-            <p>Simple. No hidden fees.</p>
+            <h2>Simple pricing</h2>
+            <p>One assistant. Your own VM. No surprises.</p>
           </div>
           <div className="clawix-pricing__grid clawix-pricing__grid--three">
             <div className="clawix-pricing__card">
               <h3>Bring Your Own Key</h3>
-              <div className="clawix-pricing__amount">$50<span>/month</span></div>
-              <p className="clawix-pricing__desc">Use your own API keys from any provider.</p>
+              <div className="clawix-pricing__amount">$25<span>/month</span></div>
+              <p className="clawix-pricing__desc">Connect your own API key. We host everything else.</p>
               <ul>
-                <li>1 always-on OpenClaw agent</li>
-                <li>Dedicated container</li>
-                <li>Allowed tools + read-only defaults</li>
-                <li>Domain allowlisting</li>
-                <li>Human-in-the-loop write approval</li>
-                <li>Full action log and cost tracking</li>
-                <li>BYOM — connect any provider</li>
-                <li>Slack + Telegram integration</li>
+                <li>Dedicated VM — your instance only</li>
+                <li>Dedicated database for memory and history</li>
+                <li>Connect any provider with your own key</li>
+                <li>Slack and Telegram integration</li>
+                <li>All built-in tools included</li>
+                <li>Full action log and dashboard</li>
+                <li>Access control — invite or restrict users</li>
                 <li>Email support</li>
               </ul>
-              <p className="clawix-pricing__note">You pay your LLM provider directly. Clawix is the platform fee.</p>
+              <p className="clawix-pricing__note">You pay your LLM provider directly. This is the hosting fee.</p>
               <span className="clawix-pricing__coming-soon">Coming soon</span>
             </div>
             <div className="clawix-pricing__card clawix-pricing__card--featured">
               <h3>All-In</h3>
-              <div className="clawix-pricing__amount">$100<span>/month</span></div>
-              <p className="clawix-pricing__desc">Everything in BYOK, plus AI credits included.</p>
+              <div className="clawix-pricing__amount">$50<span>/month</span></div>
+              <p className="clawix-pricing__desc">Everything in BYOK, plus model credits included.</p>
               <ul>
-                <li>1 always-on OpenClaw agent</li>
-                <li>Dedicated container</li>
-                <li>Allowed tools + read-only defaults</li>
-                <li>Domain allowlisting</li>
-                <li>Human-in-the-loop write approval</li>
-                <li>Full action log and cost tracking</li>
-                <li>BYOM — connect any provider</li>
-                <li>Slack + Telegram integration</li>
-                <li>$40/month in AI credits included</li>
+                <li>Dedicated VM — your instance only</li>
+                <li>Dedicated database for memory and history</li>
+                <li>Connect any provider with your own key</li>
+                <li>Slack and Telegram integration</li>
+                <li>All built-in tools included</li>
+                <li>Full action log and dashboard</li>
+                <li>Access control — invite or restrict users</li>
+                <li>$20/month in model credits included</li>
                 <li>No need to manage your own API keys</li>
-                <li>Usage tracked and visible in console</li>
-                <li>Email support</li>
+                <li>Priority email support</li>
               </ul>
               <span className="clawix-pricing__coming-soon">Coming soon</span>
             </div>
             <div className="clawix-pricing__card">
-              <h3>Enterprise</h3>
+              <h3>Teams</h3>
               <div className="clawix-pricing__amount">Custom</div>
-              <p className="clawix-pricing__desc">For teams that need more agents, SSO, and dedicated support.</p>
+              <p className="clawix-pricing__desc">Multiple dedicated instances for your whole team.</p>
               <ul>
-                <li>Multiple agents</li>
-                <li>SSO and role-based access</li>
-                <li>Fleet management</li>
-                <li>SIEM integration</li>
+                <li>One dedicated instance per person</li>
+                <li>Shared workspace tools (optional)</li>
+                <li>Centralised billing and usage</li>
+                <li>SSO and access management</li>
+                <li>Custom system prompts per instance</li>
                 <li>Dedicated support</li>
-                <li>Custom SLAs</li>
               </ul>
               <span className="clawix-pricing__coming-soon">Coming soon</span>
             </div>
@@ -274,8 +293,8 @@ export default function ClawixPage() {
       <section className="clawix-cta" id="contact">
         <div className="clawix-cta__inner">
           <div className="clawix-cta__content">
-            <h2>Ready to run your agent?</h2>
-            <p>Join the waitlist and we'll let you know when Clawix is live.</p>
+            <h2>Your own AI assistant, waiting.</h2>
+            <p>Join the waitlist and be first to know when Clawix is live.</p>
             <button onClick={() => setShowWaitlist(true)} className="contact__cta">
               join the waitlist
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
@@ -299,7 +318,7 @@ export default function ClawixPage() {
             ) : (
               <>
                 <h3>Join the waitlist</h3>
-                <p>Be the first to know when Clawix launches.</p>
+                <p>Be the first to get your own dedicated Clawix instance.</p>
                 <form onSubmit={handleSubmit} className="clawix-modal__form">
                   <input
                     type="text"
@@ -325,7 +344,7 @@ export default function ClawixPage() {
       )}
 
       <Footer
-        description="OpenClaw agents running safely in the cloud. A venture by xsentry labs."
+        description="Your personal AI assistant, dedicated to you. A venture by xsentry labs."
         columns={[
           {
             title: 'Product',
