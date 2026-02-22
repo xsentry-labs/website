@@ -8,7 +8,7 @@ export default function ClawixPage() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    document.title = 'Clawix — Your Personal AI Assistant, Always On'
+    document.title = 'Clawix - Your Personal AI Agent for Digital Work'
   }, [])
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function ClawixPage() {
         <div className="hero__overlay">
           <div className="hero__brand">
             <h1 className="hero__title">clawix</h1>
-            <p className="hero__tagline">Your personal AI assistant. Dedicated to you. Always on.</p>
+            <p className="hero__tagline">Your personal AI agent. Connects your tools. Handles your work. Remembers everything.</p>
           </div>
           <nav className="hero__nav" aria-label="Main navigation">
             <a href="#how-it-works">How It Works</a>
@@ -57,12 +57,14 @@ export default function ClawixPage() {
       {/* Intro */}
       <section className="clawix-intro">
         <div className="clawix-intro__inner">
-          <h2>Not a shared chatbot. Your own private instance.</h2>
+          <h2>The problem: your digital life is fragmented.</h2>
           <p>
-            Clawix gives you a personal AI assistant that runs 24/7 on a dedicated VM we
-            maintain for you. Your own isolated environment, your own persistent memory,
-            your own conversation history. It lives in your Slack, your Telegram, or wherever
-            you work — and only you can talk to it, unless you decide otherwise.
+            Your email, calendar, docs, Slack, CRM, spreadsheets - each tool has a piece of your work.
+            You're the glue layer, manually copying information between systems, remembering what's where,
+            context switching constantly. And most AI assistants are just chatbots - they answer questions
+            but don't actually do anything. Clawix is different. It's your personal AI agent that understands
+            your full context, connects across your tools, and takes real actions - sending emails, scheduling
+            meetings, updating databases, drafting messages. And it remembers everything about you and your work.
           </p>
         </div>
       </section>
@@ -72,43 +74,43 @@ export default function ClawixPage() {
         <div className="clawix-steps__inner">
           <div className="clawix-steps__header">
             <h2>How it works</h2>
-            <p>You sign up. We spin it up. You start talking.</p>
+            <p>Set it up once. Let it handle your work 24/7.</p>
           </div>
           <div className="clawix-steps__grid">
             <div className="clawix-steps__card">
               <div className="clawix-steps__num">01</div>
-              <h3>Configure</h3>
-              <p>Pick your model and connect your channels.</p>
+              <h3>Connect your world</h3>
+              <p>Tell Clawix about your tools and how you work.</p>
               <ul>
-                <li>Choose your LLM provider — Anthropic, OpenAI, Gemini, or more</li>
-                <li>Connect Slack, Telegram, or both</li>
-                <li>Set a custom persona and system prompt</li>
-                <li>Choose which built-in tools to enable</li>
-                <li>Optionally invite others to talk to your agent</li>
+                <li>Connect Slack, Telegram, email, calendar, docs, CRM - or integrate custom APIs</li>
+                <li>Choose your AI model (Anthropic, OpenAI, Gemini, or bring your own)</li>
+                <li>Define what your agent should do and how to behave</li>
+                <li>Enable the actions and tools it should use (search, schedule, draft, update)</li>
+                <li>Set access permissions for who can interact with it</li>
               </ul>
             </div>
             <div className="clawix-steps__card">
               <div className="clawix-steps__num">02</div>
-              <h3>We spin it up</h3>
-              <p>Your dedicated instance is ready in seconds.</p>
+              <h3>It handles your work</h3>
+              <p>Your agent works 24/7 - triaging, drafting, coordinating, remembering.</p>
               <ul>
-                <li>Isolated VM — your agent, your data, nobody else's</li>
-                <li>Dedicated database for memory, notes, and history</li>
-                <li>Always on — no laptop to keep running</li>
-                <li>We handle uptime, updates, and infrastructure</li>
-                <li>Your keys and data never touch shared resources</li>
+                <li>Proactive tasks - filter email, summarize meetings, remind you of deadlines</li>
+                <li>Coordinate across tools - send an email and update your CRM in one go</li>
+                <li>Takes real actions - books meetings, drafts messages, files tickets, updates databases</li>
+                <li>Persistent memory - knows who you are, what you care about, your context</li>
+                <li>Works in the background - no interruptions, no context switching required</li>
               </ul>
             </div>
             <div className="clawix-steps__card">
               <div className="clawix-steps__num">03</div>
-              <h3>Start talking</h3>
-              <p>Your assistant is ready — ask it anything.</p>
+              <h3>Reclaim your time</h3>
+              <p>Stop doing admin work. Focus on what matters.</p>
               <ul>
-                <li>Message it in Slack or Telegram like a colleague</li>
-                <li>It searches the web, checks stocks, saves notes</li>
-                <li>It remembers things you tell it across sessions</li>
-                <li>Streaming replies — tokens appear as they're generated</li>
-                <li>Full action log of everything it's done</li>
+                <li>Hours back per week from automated routine tasks</li>
+                <li>Less context switching - your agent bridges your tools</li>
+                <li>Fewer interruptions - it handles things without bothering you</li>
+                <li>Full visibility - action log shows everything it's done and why</li>
+                <li>You stay in control - approve risky actions, set boundaries, adjust as you go</li>
               </ul>
             </div>
           </div>
@@ -119,51 +121,51 @@ export default function ClawixPage() {
       <section className="clawix-features" id="features">
         <div className="clawix-features__inner">
           <div className="clawix-features__header">
-            <h2>Built for one person. You.</h2>
-            <p>Private by default. Persistent. Always available.</p>
+            <h2>Solve the problem once and for all.</h2>
+            <p>Clawix eliminates fragmentation, context switching, and wasted hours on admin work.</p>
           </div>
           <div className="clawix-features__grid">
             <div className="clawix-features__card">
               <div className="clawix-features__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
               </div>
-              <h3>Dedicated VM</h3>
-              <p>Your agent runs in its own isolated environment. No shared compute, no noisy neighbours. Your instance is yours alone — unless you invite someone in.</p>
+              <h3>Truly independent</h3>
+              <p>Your agent runs in its own isolated environment with dedicated resources. No sharing compute with others, no interference, no data mingling. It's yours alone - fast, reliable, and always available.</p>
             </div>
             <div className="clawix-features__card">
               <div className="clawix-features__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
               </div>
-              <h3>Your Own Memory</h3>
-              <p>A dedicated database stores your notes, conversation history, and saved context. Your agent remembers what you tell it — and that data never mingles with anyone else's.</p>
+              <h3>Persistent context</h3>
+              <p>Your agent remembers your preferences, past conversations, important context, and your work patterns. It doesn't start from scratch each time - it understands you and your needs over time.</p>
             </div>
             <div className="clawix-features__card">
               <div className="clawix-features__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               </div>
-              <h3>Works Where You Do</h3>
-              <p>Slack, Telegram, or both. Your assistant lives inside the tools you already use — no new app to open, no browser tab to keep around.</p>
+              <h3>Bridges your tools</h3>
+              <p>Your agent knows how to talk to Slack, Telegram, email, calendar, CRM, docs, and more. It connects the dots between your fragmented toolstack - no more manual copying and coordinating.</p>
             </div>
             <div className="clawix-features__card">
               <div className="clawix-features__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
               </div>
-              <h3>Bring Your Model</h3>
-              <p>Connect your own API key from Anthropic, OpenAI, OpenRouter, Gemini, or Together. You choose the model, you own the costs. Switch anytime from your dashboard.</p>
+              <h3>You choose the brain</h3>
+              <p>Use Claude, GPT-4, Gemini, or any model via your own API key. You're not locked in - switch models, providers, or bring your own anytime. You own the costs and the relationship.</p>
             </div>
             <div className="clawix-features__card">
               <div className="clawix-features__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
               </div>
-              <h3>Built-In Tools</h3>
-              <p>Web search, real-time stock quotes, notes and memory, file sandbox, reminders. Enable the tools you want — your agent will use them automatically.</p>
+              <h3>Takes real actions</h3>
+              <p>Web search, send emails, schedule meetings, file tickets, update databases, take notes, set reminders. Your agent isn't just a chatbot - it actually does things on your behalf.</p>
             </div>
             <div className="clawix-features__card">
               <div className="clawix-features__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
               </div>
-              <h3>Full Action Log</h3>
-              <p>Every tool call, every reply, every event — logged and searchable. A clear record of everything your assistant has done, always accessible from your dashboard.</p>
+              <h3>Full transparency</h3>
+              <p>Every action logged, searchable, and auditable. You always know what your agent has done, why it did it, and when. Complete visibility and control - you approve risky actions, not the other way around.</p>
             </div>
           </div>
         </div>
@@ -173,15 +175,15 @@ export default function ClawixPage() {
       <section className="clawix-workbook" id="action-log">
         <div className="clawix-workbook__inner">
           <div className="clawix-workbook__content">
-            <h2>Everything your assistant does. Logged.</h2>
-            <p>A chronological record of every action your agent takes — tool calls, replies, reminders fired. You always know what it's done and when it did it.</p>
+            <h2>Stay in control. Always.</h2>
+            <p>You decide what your agent can do, and you see everything it's doing. A complete, searchable log of every action - no black boxes, no surprises, no regrets.</p>
             <ul>
-              <li><strong>Timestamp</strong> — when it happened</li>
-              <li><strong>Action</strong> — what the agent did</li>
-              <li><strong>Type</strong> — tool call, reply, or system event</li>
-              <li><strong>Channel</strong> — which channel triggered the action</li>
+              <li><strong>What it did</strong> - the specific action (sent email, booked meeting, updated ticket)</li>
+              <li><strong>When it happened</strong> - exact timestamp</li>
+              <li><strong>Why it did it</strong> - context and reasoning</li>
+              <li><strong>Where it came from</strong> - which channel or trigger initiated it</li>
             </ul>
-            <p className="clawix-workbook__extra">Searchable from your dashboard. Exportable any time. Retained for the life of your instance.</p>
+            <p className="clawix-workbook__extra">Full audit trail. Searchable, filterable, exportable. You own the data and the history.</p>
           </div>
           <div className="clawix-workbook__visual">
             <div className="clawix-workbook__mock">
@@ -215,7 +217,7 @@ export default function ClawixPage() {
               </div>
               <div className="clawix-workbook__mock-row clawix-workbook__mock-row--approval">
                 <span className="clawix-workbook__mock-time">11:15:00</span>
-                <span className="clawix-workbook__mock-action">Reminder fired — sent to @nihal</span>
+                <span className="clawix-workbook__mock-action">Reminder fired - sent to @nihal</span>
                 <span className="clawix-workbook__mock-tag clawix-workbook__mock-tag--pending">system</span>
                 <span className="clawix-workbook__mock-cost">slack</span>
               </div>
@@ -232,22 +234,22 @@ export default function ClawixPage() {
       <section className="clawix-pricing" id="pricing">
         <div className="clawix-pricing__inner">
           <div className="clawix-pricing__header">
-            <h2>Simple pricing</h2>
-            <p>One assistant. Your own VM. No surprises.</p>
+            <h2>Pricing that makes sense</h2>
+            <p>Reclaim hours every week. Pricing is simple. The value is enormous.</p>
           </div>
           <div className="clawix-pricing__grid clawix-pricing__grid--three">
             <div className="clawix-pricing__card">
               <h3>Bring Your Own Key</h3>
               <div className="clawix-pricing__amount">$25<span>/month</span></div>
-              <p className="clawix-pricing__desc">Connect your own API key. We host everything else.</p>
+              <p className="clawix-pricing__desc">For those who want control. Use your own API key, save on compute costs.</p>
               <ul>
-                <li>Dedicated VM — your instance only</li>
+                <li>Dedicated VM - your instance only</li>
                 <li>Dedicated database for memory and history</li>
                 <li>Connect any provider with your own key</li>
                 <li>Slack and Telegram integration</li>
                 <li>All built-in tools included</li>
                 <li>Full action log and dashboard</li>
-                <li>Access control — invite or restrict users</li>
+                <li>Access control - invite or restrict users</li>
                 <li>Email support</li>
               </ul>
               <p className="clawix-pricing__note">You pay your LLM provider directly. This is the hosting fee.</p>
@@ -256,15 +258,15 @@ export default function ClawixPage() {
             <div className="clawix-pricing__card clawix-pricing__card--featured">
               <h3>All-In</h3>
               <div className="clawix-pricing__amount">$50<span>/month</span></div>
-              <p className="clawix-pricing__desc">Everything in BYOK, plus model credits included.</p>
+              <p className="clawix-pricing__desc">Recommended. No API key juggling. Everything included and ready to go.</p>
               <ul>
-                <li>Dedicated VM — your instance only</li>
+                <li>Dedicated VM - your instance only</li>
                 <li>Dedicated database for memory and history</li>
                 <li>Connect any provider with your own key</li>
                 <li>Slack and Telegram integration</li>
                 <li>All built-in tools included</li>
                 <li>Full action log and dashboard</li>
-                <li>Access control — invite or restrict users</li>
+                <li>Access control - invite or restrict users</li>
                 <li>$20/month in model credits included</li>
                 <li>No need to manage your own API keys</li>
                 <li>Priority email support</li>
@@ -274,7 +276,7 @@ export default function ClawixPage() {
             <div className="clawix-pricing__card">
               <h3>Teams</h3>
               <div className="clawix-pricing__amount">Custom</div>
-              <p className="clawix-pricing__desc">Multiple dedicated instances for your whole team.</p>
+              <p className="clawix-pricing__desc">Multiply the impact. One agent per person, with team-wide coordination.</p>
               <ul>
                 <li>One dedicated instance per person</li>
                 <li>Shared workspace tools (optional)</li>
@@ -293,8 +295,8 @@ export default function ClawixPage() {
       <section className="clawix-cta" id="contact">
         <div className="clawix-cta__inner">
           <div className="clawix-cta__content">
-            <h2>Your own AI assistant, waiting.</h2>
-            <p>Join the waitlist and be first to know when Clawix is live.</p>
+            <h2>Stop wasting hours on admin work.</h2>
+            <p>Join the waitlist and be first when Clawix launches. Reclaim your time. Focus on what matters.</p>
             <button onClick={() => setShowWaitlist(true)} className="contact__cta">
               join the waitlist
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
@@ -312,13 +314,13 @@ export default function ClawixPage() {
             </button>
             {submitted ? (
               <div className="clawix-modal__success">
-                <h3>You're on the list.</h3>
-                <p>We'll reach out when Clawix is ready.</p>
+                <h3>You're in.</h3>
+                <p>We'll be in touch when Clawix launches. Get ready to reclaim your time.</p>
               </div>
             ) : (
               <>
                 <h3>Join the waitlist</h3>
-                <p>Be the first to get your own dedicated Clawix instance.</p>
+                <p>Be first to get your personal AI agent that actually handles your work.</p>
                 <form onSubmit={handleSubmit} className="clawix-modal__form">
                   <input
                     type="text"
@@ -344,7 +346,7 @@ export default function ClawixPage() {
       )}
 
       <Footer
-        description="Your personal AI assistant, dedicated to you. A venture by xsentry labs."
+        description="Your personal AI agent. Connects your tools. Handles your work. Remembers everything. A venture by xsentry labs."
         columns={[
           {
             title: 'Product',
