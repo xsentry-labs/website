@@ -13,10 +13,6 @@
     --slate-700: #334155;
     --slate-800: #1e293b;
     --slate-900: #0f172a;
-    --cyan: #06b6d4;
-    --cyan-dark: #0891b2;
-    --cyan-light: #67e8f9;
-    --indigo: #4f46e5;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sohne:wght@500;700&display=swap');
@@ -25,7 +21,7 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-fo
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #f0f7ff 100%);
+    background: var(--white);
     color: #1f2937;
     font-size: clamp(1rem, 1.2vw, 1.125rem);
     line-height: 1.6;
@@ -600,36 +596,19 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ========== CLAWIX PAGE ========== */
 .clawix-intro {
-    background: linear-gradient(135deg, #f0f7ff 0%, #f0f9ff 50%, #e0f2fe 100%);
+    background: var(--white);
     padding: 5rem 1.5rem 4rem;
     text-align: center;
     position: relative;
-    overflow: hidden;
-}
-.clawix-intro::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
 }
 .clawix-intro__inner {
     max-width: 700px;
     margin: 0 auto;
-    position: relative;
-    z-index: 1;
 }
 .clawix-intro__inner h2 {
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 700;
-    background: linear-gradient(135deg, var(--slate-900) 0%, var(--indigo) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--slate-900);
     margin-bottom: 1.25rem;
 }
 .clawix-intro__inner p {
@@ -643,16 +622,6 @@ h1, h2, h3, h4, h5, h6 {
 .clawix-steps {
     background: var(--white);
     padding: 4.5rem 1.5rem;
-    position: relative;
-}
-.clawix-steps::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, var(--cyan) 50%, transparent 100%);
 }
 .clawix-steps__inner {
     max-width: 1152px;
@@ -679,39 +648,22 @@ h1, h2, h3, h4, h5, h6 {
     gap: 2rem;
 }
 .clawix-steps__card {
-    background: linear-gradient(135deg, var(--white) 0%, rgba(6, 182, 212, 0.02) 100%);
-    border: 1px solid rgba(6, 182, 212, 0.1);
+    background: var(--white);
+    border: 1px solid var(--slate-200);
     padding: 2.75rem;
     border-radius: 12px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    overflow: hidden;
-}
-.clawix-steps__card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--cyan), var(--indigo));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clawix-steps__card:hover {
-    border-color: var(--cyan);
+    border-color: var(--slate-400);
     transform: translateY(-8px);
-    box-shadow: 0 16px 48px rgba(6, 182, 212, 0.15);
-    background: linear-gradient(135deg, var(--white) 0%, rgba(6, 182, 212, 0.05) 100%);
-}
-.clawix-steps__card:hover::before {
-    transform: scaleX(1);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
 }
 .clawix-steps__num {
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--cyan);
+    color: var(--slate-500);
     margin-bottom: 1.25rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -753,7 +705,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Features */
 .clawix-features {
-    background: linear-gradient(180deg, var(--white) 0%, rgba(6, 182, 212, 0.03) 100%);
+    background: var(--white);
     padding: 4.5rem 1.5rem;
 }
 .clawix-features__inner {
@@ -792,32 +744,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 .clawix-features__card {
     background: var(--white);
-    border: 1px solid rgba(6, 182, 212, 0.1);
+    border: 1px solid var(--slate-200);
     padding: 3rem;
     text-align: center;
     border-radius: 12px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-}
-.clawix-features__card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.1), transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
 }
 .clawix-features__card:hover {
-    border-color: var(--cyan);
+    border-color: var(--slate-400);
     transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(6, 182, 212, 0.12);
-}
-.clawix-features__card:hover::before {
-    opacity: 1;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
 }
 .clawix-features__icon {
     display: inline-flex;
@@ -826,13 +762,13 @@ h1, h2, h3, h4, h5, h6 {
     width: 3.5rem;
     height: 3.5rem;
     margin-bottom: 1.75rem;
-    background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(79, 70, 229, 0.1));
+    background: var(--slate-100);
     border-radius: 50%;
-    color: var(--cyan);
+    color: var(--slate-700);
     transition: all 0.3s ease;
 }
 .clawix-features__card:hover .clawix-features__icon {
-    background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(79, 70, 229, 0.2));
+    background: var(--slate-200);
     transform: scale(1.1);
 }
 .clawix-features__icon svg { width: 1.75rem; height: 1.75rem; }
@@ -855,21 +791,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Workbook */
 .clawix-workbook {
-    background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+    background: var(--white);
     padding: 5rem 1.5rem;
-    position: relative;
-    overflow: hidden;
-}
-.clawix-workbook::before {
-    content: '';
-    position: absolute;
-    bottom: -20%;
-    left: -10%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
 }
 .clawix-workbook__inner {
     max-width: 1152px;
@@ -878,16 +801,11 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr 1.2fr;
     gap: 4rem;
     align-items: center;
-    position: relative;
-    z-index: 1;
 }
 .clawix-workbook__content h2 {
     font-size: clamp(1.75rem, 3vw, 2.25rem);
     font-weight: 700;
-    background: linear-gradient(135deg, var(--slate-900) 0%, var(--indigo) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--slate-900);
     margin-bottom: 1.5rem;
 }
 .clawix-workbook__content > p {
@@ -923,11 +841,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Workbook mock */
 .clawix-workbook__mock {
     background: var(--white);
-    border: 1px solid rgba(6, 182, 212, 0.2);
+    border: 1px solid var(--slate-200);
     font-size: 0.8125rem;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 16px 48px rgba(6, 182, 212, 0.1);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
     animation: slideIn 0.6s ease forwards;
     animation-delay: 0.2s;
     opacity: 0;
@@ -947,8 +865,8 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
-    border-bottom: 1px solid rgba(6, 182, 212, 0.1);
-    background: linear-gradient(135deg, var(--white) 0%, rgba(6, 182, 212, 0.02) 100%);
+    border-bottom: 1px solid var(--slate-200);
+    background: var(--slate-50);
 }
 .clawix-workbook__mock-title {
     font-weight: 700;
@@ -957,7 +875,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .clawix-workbook__mock-status {
     font-size: 0.6875rem;
-    color: var(--cyan);
+    color: var(--slate-600);
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -1043,36 +961,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 .clawix-pricing__card {
     background: var(--white);
-    border: 1px solid rgba(6, 182, 212, 0.1);
+    border: 1px solid var(--slate-200);
     padding: 3rem;
     border-radius: 12px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    overflow: hidden;
-}
-.clawix-pricing__card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
 }
 .clawix-pricing__card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(6, 182, 212, 0.12);
-    border-color: var(--cyan);
-}
-.clawix-pricing__card:hover::before {
-    opacity: 1;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    border-color: var(--slate-400);
 }
 .clawix-pricing__card--featured {
-    border-color: var(--cyan);
-    background: linear-gradient(135deg, var(--white) 0%, rgba(6, 182, 212, 0.05) 100%);
-    box-shadow: 0 12px 48px rgba(6, 182, 212, 0.15);
+    border-color: var(--slate-400);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1);
     transform: scale(1.02);
 }
 .clawix-pricing__card h3 {
@@ -1084,10 +986,7 @@ h1, h2, h3, h4, h5, h6 {
 .clawix-pricing__amount {
     font-size: 2.75rem;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--slate-900) 0%, var(--indigo) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--slate-900);
     letter-spacing: -0.02em;
     margin-bottom: 0.75rem;
 }
@@ -1095,8 +994,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1rem;
     font-weight: 400;
     color: var(--slate-500);
-    background: none;
-    -webkit-text-fill-color: unset;
 }
 .clawix-pricing__desc {
     font-size: 0.875rem;
@@ -1124,7 +1021,7 @@ h1, h2, h3, h4, h5, h6 {
     content: '\2713';
     position: absolute;
     left: 0;
-    color: var(--cyan);
+    color: var(--slate-700);
     font-size: 0.875rem;
     font-weight: 700;
 }
@@ -1147,55 +1044,29 @@ h1, h2, h3, h4, h5, h6 {
 
 /* CTA */
 .clawix-cta {
-    background: linear-gradient(135deg, var(--slate-900) 0%, #1a365d 100%);
+    background: var(--white);
     padding: 5rem 1.5rem;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-.clawix-cta::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-}
-.clawix-cta::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    left: -15%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
 }
 .clawix-cta__inner {
     max-width: 600px;
     margin: 0 auto;
-    position: relative;
-    z-index: 1;
 }
 .clawix-cta__content h2 {
     font-size: clamp(1.75rem, 3vw, 2.25rem);
     font-weight: 700;
-    color: var(--white);
+    color: var(--slate-900);
     margin-bottom: 0.75rem;
 }
 .clawix-cta__content p {
     font-size: 1.0625rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--slate-600);
     font-weight: 400;
     margin-bottom: 2.5rem;
 }
 .clawix-cta__content .contact__cta {
     display: inline-flex;
-    background: linear-gradient(135deg, var(--cyan), var(--cyan-dark));
+    background: var(--slate-900);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 1.0625rem;
     font-weight: 600;
@@ -1207,12 +1078,11 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
 }
 .clawix-cta__content .contact__cta:hover {
+    background: var(--slate-800);
     transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(6, 182, 212, 0.3);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 .clawix-cta__content .contact__cta:active {
     transform: translateY(0);
@@ -1292,8 +1162,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 0.9375rem;
     padding: 0.925rem 1.125rem;
-    border: 1px solid rgba(6, 182, 212, 0.2);
-    background: rgba(6, 182, 212, 0.02);
+    border: 1px solid var(--slate-200);
+    background: var(--white);
     color: var(--slate-900);
     outline: none;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1304,28 +1174,26 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--slate-400);
 }
 .clawix-modal__form input:focus {
-    border-color: var(--cyan);
-    background: var(--white);
-    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+    border-color: var(--slate-600);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
 }
 .clawix-modal__form button {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 0.9375rem;
     font-weight: 600;
     padding: 0.925rem 1.125rem;
-    background: linear-gradient(135deg, var(--cyan), var(--cyan-dark));
+    background: var(--slate-900);
     color: var(--white);
     border: none;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
     margin-top: 0.5rem;
 }
 .clawix-modal__form button:hover {
+    background: var(--slate-800);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(6, 182, 212, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 .clawix-modal__form button:active {
     transform: translateY(0);
@@ -1342,7 +1210,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .clawix-modal__success h3 {
     margin-bottom: 0.75rem;
-    color: var(--cyan);
+    color: var(--slate-900);
 }
 .clawix-modal__success p {
     color: var(--slate-600);
