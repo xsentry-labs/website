@@ -24,7 +24,7 @@ export default function FactorySection() {
         </h2>
         <p className="factory__text">
           Reimagine how modern systems are built. We're upgrading the
-          assembly line for how technology is created — from the ground up.
+          assembly line for how technology is created - from the ground up.
         </p>
         <span className="factory__soon">Coming Soon</span>
       </div>

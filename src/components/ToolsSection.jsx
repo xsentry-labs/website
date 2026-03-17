@@ -20,10 +20,9 @@ export default function ToolsSection() {
     <section className={`tools ${visible ? 'tools--visible' : ''}`} ref={ref}>
       <div className="tools__content">
         <span className="tools__label">From the workshop</span>
-        <h2 className="tools__heading">Tools</h2>
+        <h2 className="tools__heading">tools</h2>
         <div className="tools__grid">
           <Link to="/tools/chat-pdf" className="tools__card">
-            <div className="tools__card-accent" />
             <div className="tools__card-body">
               <h3 className="tools__card-title">Chat with your data</h3>
               <p className="tools__card-desc">
