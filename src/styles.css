@@ -60,27 +60,29 @@ body::after {
 }
 
 /* ============================================================
-   HERO — Full viewport, brand top-left, text bottom-right
+   FIXED BACKGROUND — factory image pinned behind everything
    ============================================================ */
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  height: 100dvh;
-  min-height: 600px;
+.bg-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
   background-image: url('/images/website-background-desktop.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: blur(2px);
+  /* slight scale to prevent blur edge artifacts */
+  transform: scale(1.05);
+  will-change: filter;
 }
 
 @media (max-width: 768px) {
-  .hero {
+  .bg-fixed {
     background-image: url('/images/website-background-mobile.png');
   }
 }
 
-.hero__grain {
+.bg-fixed__grain {
   position: absolute;
   inset: 0;
   opacity: 0.06;
@@ -91,17 +93,36 @@ body::after {
   pointer-events: none;
 }
 
+/* ============================================================
+   CONTENT OVERLAY — scrolls over the fixed background
+   ============================================================ */
+.content-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   HERO — Transparent, bg shows through
+   ============================================================ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 600px;
+}
+
 .hero__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(8, 8, 8, 0.3) 0%,
+    rgba(8, 8, 8, 0.25) 0%,
     rgba(8, 8, 8, 0) 25%,
-    rgba(8, 8, 8, 0) 40%,
-    rgba(8, 8, 8, 0.5) 65%,
-    rgba(8, 8, 8, 0.85) 82%,
-    rgba(8, 8, 8, 1) 100%
+    rgba(8, 8, 8, 0) 45%,
+    rgba(8, 8, 8, 0.35) 70%,
+    rgba(8, 8, 8, 0.65) 88%,
+    rgba(8, 8, 8, 0.8) 100%
   );
   pointer-events: none;
 }
@@ -129,7 +150,7 @@ body::after {
   font-size: 0.7rem;
   font-weight: 300;
   letter-spacing: 0.3em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: var(--text);
   opacity: 0.7;
 }
@@ -175,13 +196,15 @@ body::after {
 }
 
 /* ============================================================
-   FACTORY — Experience the Factory
+   FACTORY — Semi-transparent overlay, bg bleeds through
    ============================================================ */
 .factory {
-  background: var(--bg);
+  position: relative;
+  background: rgba(8, 8, 8, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   padding: clamp(6rem, 12vw, 12rem) clamp(2rem, 6vw, 8rem);
   text-align: center;
-  position: relative;
 }
 
 .factory__rule {
@@ -278,12 +301,14 @@ body::after {
 }
 
 /* ============================================================
-   TOOLS — Workshop utilities
+   TOOLS — Heavier overlay, card reads cleanly
    ============================================================ */
 .tools {
-  background: var(--bg-warm);
-  padding: clamp(5rem, 10vw, 9rem) clamp(2rem, 6vw, 8rem);
   position: relative;
+  background: rgba(8, 8, 8, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: clamp(5rem, 10vw, 9rem) clamp(2rem, 6vw, 8rem);
 }
 
 .tools::before {
@@ -355,8 +380,8 @@ body::after {
   width: 100%;
   max-width: 420px;
   display: flex;
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(20, 18, 16, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 2px;
   overflow: hidden;
   opacity: 0;
@@ -425,9 +450,10 @@ body::after {
 }
 
 /* ============================================================
-   FOOTER
+   FOOTER — Solid bg, no background image bleed
    ============================================================ */
 .footer {
+  position: relative;
   background: var(--bg);
   padding: 0 clamp(2rem, 6vw, 8rem);
 }
@@ -466,7 +492,7 @@ body::after {
   font-size: 0.7rem;
   font-weight: 300;
   letter-spacing: 0.3em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: var(--text);
   opacity: 0.7;
 }
@@ -532,10 +558,6 @@ body::after {
 
   .factory--visible .factory__rule {
     height: 50px;
-  }
-
-  .tools__grid {
-    grid-template-columns: 1fr;
   }
 
   .footer__grid {

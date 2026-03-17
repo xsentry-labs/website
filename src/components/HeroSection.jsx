@@ -1,7 +1,6 @@
 export default function HeroSection() {
   return (
     <section className="hero">
-      <div className="hero__grain" />
       <div className="hero__overlay" />
       <div className="hero__content">
         <div className="hero__top">
