@@ -1,33 +1,33 @@
-import { Link } from 'react-router-dom'
-
-export default function Footer({ description, columns }) {
+export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__inner">
+        <div className="footer__rule" />
         <div className="footer__grid">
           <div className="footer__col">
-            <h4>xsentry labs</h4>
-            <p>{description}</p>
+            <span className="footer__brand">xsentry labs</span>
+            <p className="footer__tagline">
+              Building systems the modern way.
+            </p>
           </div>
-          {columns.map((col) => (
-            <div key={col.title} className="footer__col">
-              <h4>{col.title}</h4>
-              <ul>
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    {link.to ? (
-                      <Link to={link.to}>{link.label}</Link>
-                    ) : (
-                      <a href={link.href}>{link.label}</a>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className="footer__col">
+            <h4 className="footer__col-title">Product</h4>
+            <ul className="footer__links">
+              <li><a href="#factory">the Factory</a></li>
+              <li><a href="/tools/chat-pdf">Chat with your data</a></li>
+            </ul>
+          </div>
+          <div className="footer__col">
+            <h4 className="footer__col-title">Contact</h4>
+            <ul className="footer__links">
+              <li><a href="mailto:hello@xsentrylabs.com">hello@xsentrylabs.com</a></li>
+            </ul>
+          </div>
         </div>
         <div className="footer__bottom">
-          © 2026 Xsentry Labs. All rights reserved.
+          <span className="footer__copy">
+            &copy; {new Date().getFullYear()} xsentry labs. All rights reserved.
+          </span>
         </div>
       </div>
     </footer>
