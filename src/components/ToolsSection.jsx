@@ -23,7 +23,7 @@ export default function ToolsSection() {
         <div className="tools__grid">
           <a href="https://paperchat.xsentrylabs.com" target="_blank" rel="noopener noreferrer" className="tools__card">
             <div className="tools__card-body">
-              <h3 className="tools__card-title">PaperChat</h3>
+              <h3 className="tools__card-title">paperchat</h3>
               <p className="tools__card-desc">
                 Upload documents. Ask anything. Get answers with citations.
               </p>
