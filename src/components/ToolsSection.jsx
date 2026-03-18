@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 
 export default function ToolsSection() {
   const ref = useRef(null)
@@ -22,9 +21,9 @@ export default function ToolsSection() {
         <span className="tools__label">From the workshop</span>
         <h2 className="tools__heading">tools</h2>
         <div className="tools__grid">
-          <Link to="/tools/chat-pdf" className="tools__card">
+          <a href="https://paperchat.xsentrylabs.com" target="_blank" rel="noopener noreferrer" className="tools__card">
             <div className="tools__card-body">
-              <h3 className="tools__card-title">Chat with your data</h3>
+              <h3 className="tools__card-title">PaperChat</h3>
               <p className="tools__card-desc">
                 Upload documents. Ask anything. Get answers with citations.
               </p>
@@ -35,7 +34,7 @@ export default function ToolsSection() {
                 </svg>
               </span>
             </div>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

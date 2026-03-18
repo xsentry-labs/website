@@ -8,7 +8,7 @@ export default function HeroSection() {
         </div>
         <div className="hero__tagline">
           <p className="hero__line hero__line--1">
-            <span>There's a factory somewhere.</span>
+            <span>There's a factory out there.</span>
           </p>
           <p className="hero__line hero__line--2">
             <span>It builds systems the modern way.</span>
