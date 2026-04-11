@@ -32,7 +32,101 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div class="bg-fixed">
+        <div class="bg-fixed__grain"></div>
+    </div>
+
+    <main class="content-overlay">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+                <div class="hero__top">
+                    <span class="hero__brand">xsentry labs</span>
+                </div>
+                <div class="hero__tagline">
+                    <p class="hero__line hero__line--1">
+                        <span>There's a factory out there.</span>
+                    </p>
+                    <p class="hero__line hero__line--2">
+                        <span>It builds systems the modern way.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Factory -->
+        <section class="factory" data-reveal="0.3">
+            <div class="factory__rule"></div>
+            <div class="factory__content">
+                <h2 class="factory__heading">
+                    experience <em>the</em> Factory
+                </h2>
+                <p class="factory__text">
+                    Reimagine how modern systems are built. We're upgrading the
+                    assembly line for how technology is created - from the ground up.
+                </p>
+                <span class="factory__soon">Coming Soon</span>
+            </div>
+        </section>
+
+        <!-- Tools -->
+        <section class="tools" data-reveal="0.2">
+            <div class="tools__content">
+                <span class="tools__label">From the workshop</span>
+                <h2 class="tools__heading">tools</h2>
+                <div class="tools__grid">
+                    <a href="https://paperchat.xsentrylabs.com" target="_blank" rel="noopener noreferrer" class="tools__card">
+                        <div class="tools__card-body">
+                            <h3 class="tools__card-title">paperchat</h3>
+                            <p class="tools__card-desc">
+                                Upload documents. Ask anything. Get answers with citations.
+                            </p>
+                            <span class="tools__card-cta">
+                                Try for free
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__inner">
+                <div class="footer__rule"></div>
+                <div class="footer__grid">
+                    <div class="footer__col">
+                        <span class="footer__brand">xsentry labs</span>
+                        <p class="footer__tagline">
+                            Building systems the modern way.
+                        </p>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Product</h4>
+                        <ul class="footer__links">
+                            <li><a href="#factory">the Factory</a></li>
+                            <li><a href="https://paperchat.xsentrylabs.com">Chat with your data</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Contact</h4>
+                        <ul class="footer__links">
+                            <li><a href="mailto:hello@xsentrylabs.com">hello@xsentrylabs.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <span class="footer__copy"></span>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <link rel="stylesheet" href="/src/styles.css">
+    <script type="module" src="/src/main.js"></script>
 </body>
 </html>
