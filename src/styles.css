@@ -4,7 +4,6 @@
 
 :root {
   --bg:         #1a1a1a;
-  --bg-grain:   #1e1e1e;
   --text:       #b0b0b0;
   --text-dim:   #6e6e6e;
   --text-faint: #3a3a3a;
@@ -16,11 +15,11 @@
 }
 
 [data-theme="light"] {
-  --bg:         #f5f4f1;
-  --text:       #1a1a1a;
-  --text-dim:   #777;
-  --text-faint: #c0bdb8;
-  --border-subtle: rgba(0, 0, 0, 0.08);
+  --bg:         #e6e4e0;
+  --text:       #2a2a2a;
+  --text-dim:   #7a7a7a;
+  --text-faint: #b8b5b0;
+  --border-subtle: rgba(0, 0, 0, 0.07);
 }
 
 /* ===== Reset ===== */
@@ -74,10 +73,21 @@ body::after {
   );
 }
 
-/* Hide dither + scanlines in light mode */
-[data-theme="light"] body::before,
+/* Light mode: heavier grain, darker scanlines — newsprint / risograph feel */
+[data-theme="light"] body::before {
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+}
+
 [data-theme="light"] body::after {
-  display: none;
+  opacity: 0.04;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(40, 40, 40, 0.08) 2px,
+    rgba(40, 40, 40, 0.08) 3px
+  );
 }
 
 a {
@@ -288,38 +298,6 @@ a {
   line-height: 1.8;
   color: var(--text);
   letter-spacing: -0.02em;
-}
-
-/* ===================================================================
-   SERVICES
-   =================================================================== */
-.services {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
-  margin-top: 2.5rem;
-}
-
-.services__item {
-  border-left: 1px dashed var(--text-faint);
-  padding-left: 1.5rem;
-}
-
-.services__title {
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  color: var(--text);
-  margin-bottom: 0.5rem;
-}
-
-.services__desc {
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: var(--text-dim);
-  line-height: 1.75;
 }
 
 /* ===================================================================

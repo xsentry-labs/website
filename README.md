@@ -1,9 +1,5 @@
-## website
-Repo for website
+## xsentry labs — website
 
-connected/deployed through Vercel.
+Single-page landing site. Vanilla HTML/CSS/JS, built with Vite.
 
-
-### Pages
-- **index.html** - Parent company landing page with hero, ventures grid (services + datawolf.ai), contact section, and footer
-- **services.html** - Original services page, renamed and links updated
+Deployed through Vercel.
