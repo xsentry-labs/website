@@ -68,4 +68,4 @@ if (modal) {
 
 // Footer copyright year
 const copy = document.querySelector('.footer__copy')
-if (copy) copy.textContent = `\u00A9 ${new Date().getFullYear()} xsentry labs`
+if (copy) copy.textContent = `\u00A9 ${new Date().getFullYear()} xsentrylabs`
