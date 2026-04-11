@@ -277,16 +277,9 @@ a {
 }
 
 .factory__img {
-  max-width: 280px;
+  max-width: 600px;
   width: 100%;
   height: auto;
-  opacity: 0.8;
-  filter: grayscale(1);
-}
-
-[data-theme="light"] .factory__img {
-  opacity: 0.9;
-  filter: grayscale(1) invert(1);
 }
 
 .section--hero {
