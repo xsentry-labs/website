@@ -45,6 +45,27 @@ if (toggle && links) {
   })
 }
 
+// Modal
+const modal = document.getElementById('modal')
+if (modal) {
+  const backdrop = modal.querySelector('.modal__backdrop')
+  const closeBtn = modal.querySelector('.modal__close')
+
+  document.querySelectorAll('[data-open-modal]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault()
+      modal.classList.add('open')
+    })
+  })
+
+  const close = () => modal.classList.remove('open')
+  if (closeBtn) closeBtn.addEventListener('click', close)
+  if (backdrop) backdrop.addEventListener('click', close)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close()
+  })
+}
+
 // Footer copyright year
 const copy = document.querySelector('.footer__copy')
 if (copy) copy.textContent = `\u00A9 ${new Date().getFullYear()} xsentry labs`

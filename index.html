@@ -42,7 +42,7 @@
                 <a href="https://paperchat.xsentrylabs.com" target="_blank" rel="noopener noreferrer" class="nav__link">Chat</a>
                 <span class="nav__link nav__link--disabled">Agent <span class="nav__badge">soon</span></span>
                 <a href="#services" class="nav__link">Services</a>
-                <a href="#contact" class="nav__link">Contact</a>
+                <button class="nav__link" data-open-modal>Contact</button>
             </div>
             <button class="theme-toggle" aria-label="Toggle theme">
                 <svg class="theme-toggle__icon theme-toggle__icon--sun" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -66,7 +66,7 @@
             <div class="section__inner">
                 <p class="hero__line">Not every problem needs more resources.</p>
                 <p class="hero__line">Some need better machinery.</p>
-                <a href="#contact" class="hero__cta">Tell us about your project</a>
+                <button class="hero__cta" data-open-modal>Tell us about your project</button>
             </div>
         </section>
 
@@ -106,29 +106,43 @@
             <div class="section__inner">
                 <span class="section__label">003</span>
                 <h2 class="section__heading">Contact</h2>
-                <p class="section__text">Have a project in mind? Let's talk.</p>
-                <form class="form" action="https://formspree.io/f/placeholder" method="POST">
-                    <div class="form__field">
-                        <label class="form__label" for="name">Name</label>
-                        <input class="form__input" type="text" id="name" name="name" required autocomplete="name">
-                    </div>
-                    <div class="form__field">
-                        <label class="form__label" for="email">Email</label>
-                        <input class="form__input" type="email" id="email" name="email" required autocomplete="email">
-                    </div>
-                    <div class="form__field">
-                        <label class="form__label" for="phone">Phone <span class="form__optional">optional</span></label>
-                        <input class="form__input" type="tel" id="phone" name="phone" autocomplete="tel">
-                    </div>
-                    <div class="form__field">
-                        <label class="form__label" for="project">About your project</label>
-                        <textarea class="form__input form__textarea" id="project" name="project" rows="4" required></textarea>
-                    </div>
-                    <button class="form__submit" type="submit">Send</button>
-                </form>
+                <p class="section__text">
+                    Have a project in mind? Let's talk.
+                </p>
+                <a href="mailto:hello@xsentrylabs.com" class="contact__link">hello@xsentrylabs.com</a>
             </div>
         </section>
     </main>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal__backdrop"></div>
+        <div class="modal__panel">
+            <div class="modal__header">
+                <h2 class="modal__title">Tell us about your project</h2>
+                <button class="modal__close" aria-label="Close">&times;</button>
+            </div>
+            <form class="form" action="https://formspree.io/f/placeholder" method="POST">
+                <div class="form__field">
+                    <label class="form__label" for="name">Name</label>
+                    <input class="form__input" type="text" id="name" name="name" required autocomplete="name">
+                </div>
+                <div class="form__field">
+                    <label class="form__label" for="email">Email</label>
+                    <input class="form__input" type="email" id="email" name="email" required autocomplete="email">
+                </div>
+                <div class="form__field">
+                    <label class="form__label" for="phone">Phone <span class="form__optional">optional</span></label>
+                    <input class="form__input" type="tel" id="phone" name="phone" autocomplete="tel">
+                </div>
+                <div class="form__field">
+                    <label class="form__label" for="project">About your project</label>
+                    <textarea class="form__input form__textarea" id="project" name="project" rows="4" required></textarea>
+                </div>
+                <button class="form__submit" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
