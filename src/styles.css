@@ -544,7 +544,7 @@ a {
 }
 
 .footer__inner {
-  padding: 3rem var(--px) 2rem;
+  padding: 3rem var(--px);
   text-align: center;
 }
 
