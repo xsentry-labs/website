@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>xsentry labs</title>
-    <meta name="description" content="There's a factory out there. It builds systems the modern way.">
+    <meta name="description" content="Not every problem needs more resources. Some need better machinery.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://xsentrylabs.com">
 
     <meta property="og:title" content="xsentry labs">
-    <meta property="og:description" content="There's a factory out there. It builds systems the modern way.">
+    <meta property="og:description" content="Not every problem needs more resources. Some need better machinery.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://xsentrylabs.com">
 
@@ -64,8 +64,9 @@
         <!-- Section 1: Hero -->
         <section id="home" class="section section--hero" data-reveal>
             <div class="section__inner">
-                <p class="hero__line">There's a factory out there.</p>
-                <p class="hero__line">It builds systems the modern way.</p>
+                <p class="hero__line">Not every problem needs more resources.</p>
+                <p class="hero__line">Some need better machinery.</p>
+                <a href="#contact" class="hero__cta">Tell us about your project</a>
             </div>
         </section>
 
@@ -101,14 +102,30 @@
         <div class="divider"></div>
 
         <!-- Contact -->
-        <section id="contact" class="section section--contact" data-reveal>
+        <section id="contact" class="section" data-reveal>
             <div class="section__inner">
                 <span class="section__label">003</span>
                 <h2 class="section__heading">Contact</h2>
-                <p class="section__text">
-                    Have a project in mind? Let's talk.
-                </p>
-                <a href="mailto:hello@xsentrylabs.com" class="contact__link">hello@xsentrylabs.com</a>
+                <p class="section__text">Have a project in mind? Let's talk.</p>
+                <form class="form" action="https://formspree.io/f/placeholder" method="POST">
+                    <div class="form__field">
+                        <label class="form__label" for="name">Name</label>
+                        <input class="form__input" type="text" id="name" name="name" required autocomplete="name">
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label" for="email">Email</label>
+                        <input class="form__input" type="email" id="email" name="email" required autocomplete="email">
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label" for="phone">Phone <span class="form__optional">optional</span></label>
+                        <input class="form__input" type="tel" id="phone" name="phone" autocomplete="tel">
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label" for="project">About your project</label>
+                        <textarea class="form__input form__textarea" id="project" name="project" rows="4" required></textarea>
+                    </div>
+                    <button class="form__submit" type="submit">Send</button>
+                </form>
             </div>
         </section>
     </main>

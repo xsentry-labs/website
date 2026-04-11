@@ -1,6 +1,4 @@
-/* ===================================================================
-   xsentry labs — Nous-inspired monospace minimal
-   =================================================================== */
+/* xsentry labs */
 
 :root {
   --bg:         #1a1a1a;
@@ -22,7 +20,6 @@
   --border-subtle: rgba(0, 0, 0, 0.07);
 }
 
-/* ===== Reset ===== */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -43,7 +40,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Dither / halftone noise overlay */
 body::before {
   content: '';
   position: fixed;
@@ -56,7 +52,6 @@ body::before {
   background-size: 180px 180px;
 }
 
-/* Subtle scanlines */
 body::after {
   content: '';
   position: fixed;
@@ -73,7 +68,6 @@ body::after {
   );
 }
 
-/* Light mode: heavier grain, darker scanlines — newsprint / risograph feel */
 [data-theme="light"] body::before {
   opacity: 0.06;
   mix-blend-mode: multiply;
@@ -100,9 +94,6 @@ a {
   color: var(--bg);
 }
 
-/* ===================================================================
-   NAVIGATION
-   =================================================================== */
 .nav {
   position: fixed;
   top: 0;
@@ -171,7 +162,6 @@ a {
   vertical-align: 1px;
 }
 
-/* Mobile toggle */
 .nav__toggle {
   display: none;
   flex-direction: column;
@@ -198,9 +188,6 @@ a {
   transform: translateY(-3px) rotate(-45deg);
 }
 
-/* ===================================================================
-   LAYOUT
-   =================================================================== */
 .divider {
   max-width: var(--max-w);
   margin: 0 auto;
@@ -283,9 +270,6 @@ a {
   transform: translateY(-50%);
 }
 
-/* ===================================================================
-   HERO
-   =================================================================== */
 .section--hero {
   padding-top: clamp(8rem, 16vw, 14rem);
   padding-bottom: clamp(5rem, 10vw, 9rem);
@@ -300,27 +284,96 @@ a {
   letter-spacing: -0.02em;
 }
 
-/* ===================================================================
-   CONTACT
-   =================================================================== */
-.contact__link {
+.hero__cta {
+  display: inline-block;
+  margin-top: 2.5rem;
   font-family: var(--mono);
-  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  font-size: 0.75rem;
   font-weight: 400;
+  letter-spacing: 0.06em;
   color: var(--text);
-  letter-spacing: 0.02em;
-  border-bottom: 1px dashed var(--text-faint);
-  padding-bottom: 2px;
-  transition: border-color 0.2s;
+  border: 1px dashed var(--text-faint);
+  padding: 0.7rem 1.5rem;
+  transition: border-color 0.2s, color 0.2s;
 }
 
-.contact__link:hover {
+.hero__cta:hover {
   border-color: var(--text);
 }
 
-/* ===================================================================
-   FOOTER
-   =================================================================== */
+.form {
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form__label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.form__optional {
+  color: var(--text-faint);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+}
+
+.form__input {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed var(--text-faint);
+  padding: 0.5rem 0;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form__input:focus {
+  border-color: var(--text-dim);
+}
+
+.form__textarea {
+  border: 1px dashed var(--text-faint);
+  padding: 0.75rem;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form__textarea:focus {
+  border-color: var(--text-dim);
+}
+
+.form__submit {
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  background: transparent;
+  border: 1px dashed var(--text-faint);
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.form__submit:hover {
+  border-color: var(--text);
+}
+
 .footer {
   background: var(--bg);
   max-width: var(--max-w);
@@ -379,9 +432,6 @@ a {
   letter-spacing: 0.04em;
 }
 
-/* ===================================================================
-   THEME TOGGLE
-   =================================================================== */
 .theme-toggle {
   background: none;
   border: 1px dashed var(--text-faint);
@@ -404,12 +454,10 @@ a {
   display: block;
 }
 
-/* Dark mode (default): show sun, hide moon */
 .theme-toggle__icon--moon {
   display: none;
 }
 
-/* Light mode: show moon, hide sun */
 [data-theme="light"] .theme-toggle__icon--sun {
   display: none;
 }
@@ -418,9 +466,6 @@ a {
   display: block;
 }
 
-/* ===================================================================
-   RESPONSIVE
-   =================================================================== */
 @media (max-width: 640px) {
   .nav__links {
     display: none;
@@ -441,11 +486,6 @@ a {
 
   .nav__toggle {
     display: flex;
-  }
-
-  .services {
-    grid-template-columns: 1fr;
-    gap: 2rem;
   }
 
   .footer__grid {
