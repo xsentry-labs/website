@@ -249,17 +249,22 @@ a {
   margin-bottom: 2rem;
 }
 
-.section--factory {
+.section--plate {
   text-align: center;
 }
 
-.factory__img {
+.plate__img {
   max-width: 600px;
   width: 100%;
   height: auto;
+  filter: grayscale(1) contrast(1.05);
 }
 
-.factory__caption {
+[data-theme="light"] .plate__img {
+  filter: grayscale(1) contrast(1.05) invert(0.04);
+}
+
+.plate__caption {
   font-family: var(--mono);
   font-size: clamp(0.85rem, 1.6vw, 1.05rem);
   font-weight: 400;
