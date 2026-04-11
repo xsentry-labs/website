@@ -283,6 +283,11 @@ a {
   letter-spacing: -0.03em;
 }
 
+.hero__smallcaps {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+
 .hero__rotate {
   display: inline-block;
   transition: opacity 0.3s ease, transform 0.3s ease;
