@@ -66,6 +66,29 @@ if (modal) {
   })
 }
 
+// Hero word rotation
+const rotateEl = document.querySelector('.hero__rotate')
+if (rotateEl) {
+  const words = ['products', 'solutions', 'applications']
+  let idx = 0
+
+  setInterval(() => {
+    rotateEl.style.opacity = '0'
+    rotateEl.style.transform = 'translateY(-0.2em)'
+
+    setTimeout(() => {
+      idx = (idx + 1) % words.length
+      rotateEl.textContent = words[idx]
+      rotateEl.style.transition = 'none'
+      rotateEl.style.transform = 'translateY(0.2em)'
+      rotateEl.offsetHeight // reflow
+      rotateEl.style.transition = ''
+      rotateEl.style.opacity = '1'
+      rotateEl.style.transform = 'translateY(0)'
+    }, 300)
+  }, 2500)
+}
+
 // Footer copyright year
 const copy = document.querySelector('.footer__copy')
 if (copy) copy.textContent = `\u00A9 ${new Date().getFullYear()} xsentrylabs`
