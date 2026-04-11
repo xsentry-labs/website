@@ -157,7 +157,15 @@ a {
 .divider {
   max-width: var(--max-w);
   margin: 0 auto;
-  border-bottom: 1px dashed var(--text-faint);
+  border: none;
+  height: 1.5px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--text-faint) 0,
+    var(--text-faint) 8px,
+    transparent 8px,
+    transparent 14px
+  );
 }
 
 .section {
@@ -310,34 +318,7 @@ a {
 
 .footer__inner {
   padding: 3rem var(--px) 2rem;
-}
-
-.footer__grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 3rem;
-}
-
-.footer__col {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.footer__brand {
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  color: var(--text);
-}
-
-.footer__tagline {
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: var(--text-dim);
+  text-align: center;
 }
 
 .footer__col-title {
@@ -354,7 +335,9 @@ a {
   list-style: none;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .footer__links a {
