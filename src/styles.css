@@ -272,6 +272,23 @@ a {
   transform: translateY(-50%);
 }
 
+.section--factory {
+  text-align: center;
+}
+
+.factory__img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+  filter: grayscale(1);
+}
+
+[data-theme="light"] .factory__img {
+  opacity: 0.9;
+  filter: grayscale(1) invert(1);
+}
+
 .section--hero {
   padding-top: clamp(8rem, 16vw, 14rem);
   padding-bottom: clamp(5rem, 10vw, 9rem);
@@ -368,7 +385,9 @@ a {
   width: 90%;
   max-width: 480px;
   max-height: 90vh;
-  overflow-y: auto;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   padding: 2.5rem;
   border: none;
   background-image:
@@ -387,6 +406,10 @@ a {
     left,
     right;
   background-repeat: no-repeat;
+}
+
+.modal__panel::-webkit-scrollbar {
+  display: none;
 }
 
 .modal__header {
