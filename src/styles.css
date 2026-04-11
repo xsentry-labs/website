@@ -249,29 +249,6 @@ a {
   margin-bottom: 2rem;
 }
 
-.section__status {
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: var(--text-dim);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  position: relative;
-  padding-left: 1rem;
-}
-
-.section__status::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--text-faint);
-  transform: translateY(-50%);
-}
-
 .section--factory {
   text-align: center;
 }
@@ -677,7 +654,9 @@ a {
     display: flex;
   }
 
+  /* Override space-between so the theme toggle sits next to the hamburger */
   .theme-toggle {
-    margin-right: -0.5rem;
+    margin-left: auto;
+    margin-right: 0.75rem;
   }
 }
