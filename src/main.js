@@ -1,29 +1,32 @@
 import './styles.css'
 
-// Scroll-driven background blur
-const bg = document.querySelector('.bg-fixed')
-if (bg) {
-  const onScroll = () => {
-    const progress = Math.min(window.scrollY / (window.innerHeight * 2), 1)
-    bg.style.filter = `blur(${2 + progress * 12}px)`
-  }
-  onScroll()
-  window.addEventListener('scroll', onScroll, { passive: true })
-}
-
 // Reveal sections on scroll
 document.querySelectorAll('[data-reveal]').forEach((el) => {
-  const threshold = parseFloat(el.dataset.reveal) || 0.2
   new IntersectionObserver(
     ([entry]) => {
-      if (entry.isIntersecting) {
-        el.classList.add(el.classList[0] + '--visible')
-      }
+      if (entry.isIntersecting) el.classList.add('section--visible')
     },
-    { threshold }
+    { threshold: 0.15 }
   ).observe(el)
 })
 
+// Mobile nav toggle
+const toggle = document.querySelector('.nav__toggle')
+const links = document.querySelector('.nav__links')
+if (toggle && links) {
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active')
+    links.classList.toggle('open')
+  })
+  // Close menu on link click
+  links.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => {
+      toggle.classList.remove('active')
+      links.classList.remove('open')
+    })
+  })
+}
+
 // Footer copyright year
 const copy = document.querySelector('.footer__copy')
-if (copy) copy.textContent = `\u00A9 ${new Date().getFullYear()} xsentry labs. All rights reserved.`
+if (copy) copy.textContent = `\u00A9 ${new Date().getFullYear()} xsentry labs`
