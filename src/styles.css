@@ -3,11 +3,12 @@
    =================================================================== */
 
 :root {
-  --bg:         #0a0a0a;
-  --text:       #e0e0e0;
-  --text-dim:   #666;
-  --text-faint: #333;
-  --border-subtle: rgba(255, 255, 255, 0.06);
+  --bg:         #1a1a1a;
+  --bg-grain:   #1e1e1e;
+  --text:       #b0b0b0;
+  --text-dim:   #6e6e6e;
+  --text-faint: #3a3a3a;
+  --border-subtle: rgba(255, 255, 255, 0.05);
   --mono:       'JetBrains Mono', 'Courier New', monospace;
   --sans:       'Inter', system-ui, sans-serif;
   --max-w:      1000px;
@@ -41,6 +42,42 @@ body {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+/* Dither / halftone noise overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+}
+
+/* Subtle scanlines */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.025;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(180, 180, 180, 0.15) 2px,
+    rgba(180, 180, 180, 0.15) 3px
+  );
+}
+
+/* Hide dither + scanlines in light mode */
+[data-theme="light"] body::before,
+[data-theme="light"] body::after {
+  display: none;
 }
 
 a {
