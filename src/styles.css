@@ -7,11 +7,19 @@
   --text:       #e0e0e0;
   --text-dim:   #666;
   --text-faint: #333;
-  --accent:     #e0e0e0;
+  --border-subtle: rgba(255, 255, 255, 0.06);
   --mono:       'JetBrains Mono', 'Courier New', monospace;
   --sans:       'Inter', system-ui, sans-serif;
   --max-w:      1000px;
   --px:         clamp(1.5rem, 4vw, 3rem);
+}
+
+[data-theme="light"] {
+  --bg:         #f5f4f1;
+  --text:       #1a1a1a;
+  --text-dim:   #777;
+  --text-faint: #c0bdb8;
+  --border-subtle: rgba(0, 0, 0, 0.08);
 }
 
 /* ===== Reset ===== */
@@ -362,7 +370,7 @@ a {
 }
 
 .footer__bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--border-subtle);
   padding-top: 1.5rem;
 }
 
@@ -371,6 +379,45 @@ a {
   font-size: 0.7rem;
   color: var(--text-faint);
   letter-spacing: 0.04em;
+}
+
+/* ===================================================================
+   THEME TOGGLE
+   =================================================================== */
+.theme-toggle {
+  background: none;
+  border: 1px dashed var(--text-faint);
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--text-dim);
+}
+
+.theme-toggle__icon {
+  display: block;
+}
+
+/* Dark mode (default): show sun, hide moon */
+.theme-toggle__icon--moon {
+  display: none;
+}
+
+/* Light mode: show moon, hide sun */
+[data-theme="light"] .theme-toggle__icon--sun {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle__icon--moon {
+  display: block;
 }
 
 /* ===================================================================

@@ -1,5 +1,23 @@
 import './styles.css'
 
+// Theme toggle (persisted in localStorage)
+const themeBtn = document.querySelector('.theme-toggle')
+const stored = localStorage.getItem('theme')
+if (stored) document.documentElement.setAttribute('data-theme', stored)
+
+if (themeBtn) {
+  themeBtn.addEventListener('click', () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light'
+    if (isLight) {
+      document.documentElement.removeAttribute('data-theme')
+      localStorage.removeItem('theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light')
+      localStorage.setItem('theme', 'light')
+    }
+  })
+}
+
 // Reveal sections on scroll
 document.querySelectorAll('[data-reveal]').forEach((el) => {
   new IntersectionObserver(
