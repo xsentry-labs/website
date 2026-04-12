@@ -6,8 +6,8 @@
   --text-dim:   #6e6e6e;
   --text-faint: #3a3a3a;
   --border-subtle: rgba(255, 255, 255, 0.05);
-  --mono:       'JetBrains Mono', 'Courier New', monospace;
-  --sans:       'Inter', system-ui, sans-serif;
+  --mono:       'Open Sans', system-ui, sans-serif;
+  --sans:       'Open Sans', system-ui, sans-serif;
   --max-w:      1000px;
   --px:         clamp(1.5rem, 4vw, 3rem);
   --dash:       repeating-linear-gradient(90deg, var(--text-faint) 0, var(--text-faint) 8px, transparent 8px, transparent 14px);
