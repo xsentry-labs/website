@@ -158,6 +158,10 @@ a {
   color: var(--text-faint);
 }
 
+.nav__link--active {
+  color: var(--text);
+}
+
 .nav__badge {
   font-size: 0.6rem;
   letter-spacing: 0.08em;
@@ -272,6 +276,16 @@ a {
   letter-spacing: -0.01em;
   margin: 2rem auto 0;
   max-width: 520px;
+}
+
+.plate__caption--link {
+  display: block;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.plate__caption--link:hover {
+  color: var(--text);
 }
 
 .section--hero {
