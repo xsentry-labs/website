@@ -3,29 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xsentrylabs</title>
-    <meta name="description" content="better machinery solves every problem.">
+    <title>services - xsentrylabs</title>
+    <meta name="description" content="what we deliver, from legacy migrations to custom builds.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://xsentrylabs.com">
+    <link rel="canonical" href="https://xsentrylabs.com/services">
 
-    <meta property="og:title" content="xsentrylabs">
-    <meta property="og:description" content="better machinery solves every problem.">
+    <meta property="og:title" content="services - xsentrylabs">
+    <meta property="og:description" content="what we deliver, from legacy migrations to custom builds.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://xsentrylabs.com">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="xsentrylabs">
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "xsentrylabs",
-        "description": "building systems the modern way.",
-        "url": "https://xsentrylabs.com",
-        "foundingDate": "2024"
-    }
-    </script>
+    <meta property="og:url" content="https://xsentrylabs.com/services">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,11 +22,11 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav__inner">
-            <a href="#" class="nav__brand">xsentrylabs</a>
+            <a href="/" class="nav__brand">xsentrylabs</a>
             <div class="nav__links">
-                <a href="#home" class="nav__link">home</a>
+                <a href="/" class="nav__link">home</a>
                 <a href="/products.html" class="nav__link">products</a>
-                <a href="/services.html" class="nav__link">services</a>
+                <a href="/services.html" class="nav__link nav__link--active">services</a>
                 <button class="nav__link" data-open-modal>contact</button>
             </div>
             <button class="theme-toggle" aria-label="Toggle theme">
@@ -60,82 +46,57 @@
     </nav>
 
     <main>
-        <!-- Section 1: Hero -->
-        <section id="home" class="section section--hero" data-reveal>
+        <!-- Hero -->
+        <section class="section section--hero" data-reveal>
             <div class="section__inner">
-                <h1 class="hero__heading">craft winning <span class="hero__rotate">products</span></h1>
-                <p class="hero__sub">better machinery solves every problem.</p>
-                <button class="hero__cta" data-open-modal>pitch us your problem</button>
+                <h1 class="hero__heading">services</h1>
+                <p class="hero__sub">what we deliver, from legacy migrations to custom builds.</p>
             </div>
         </section>
 
         <div class="divider"></div>
 
-        <!-- Section 2: The Factory -->
-        <section id="factory" class="section section--plate" data-reveal>
+        <!-- Service: migrations -->
+        <section class="section" id="migrations" data-reveal>
             <div class="section__inner">
                 <span class="section__label">001</span>
-                <img src="/images/factory-dither.png" alt="the factory" class="plate__img">
-                <p class="plate__caption">enterprise software, shipped in weeks, not quarters.</p>
+                <h2 class="section__heading">migrations</h2>
+                <p class="section__text">
+                    legacy codebase migration, delivered through
+                    <a href="/products.html#migrate-factory" class="section__text-link">migrate factory</a>
+                    paired with an embedded fde. we plan the cutover, do the work, and keep it running.
+                </p>
+                <button class="contact__link" data-open-modal>talk to us</button>
             </div>
         </section>
 
         <div class="divider"></div>
 
-        <!-- Section 3: Services -->
-        <section id="services" class="section" data-reveal>
+        <!-- Service: custom builds -->
+        <section class="section" id="custom-builds" data-reveal>
             <div class="section__inner">
                 <span class="section__label">002</span>
-                <h2 class="section__heading">what we do</h2>
+                <h2 class="section__heading">custom builds</h2>
                 <p class="section__text">
-                    we build custom software, ship it to production, and keep it running.
-                    no discovery phases. no quarter-long roadmaps.
+                    custom web and mobile applications, built for production from the
+                    first commit. no discovery phases, no quarter-long roadmaps.
                 </p>
-                <a href="/services.html" class="contact__link">see our services</a>
+                <button class="contact__link" data-open-modal>talk to us</button>
             </div>
         </section>
 
         <div class="divider"></div>
 
-        <!-- Section 4: Mission Control -->
-        <section id="operations" class="section section--plate" data-reveal>
+        <!-- Service: integration & data -->
+        <section class="section" id="integration-data" data-reveal>
             <div class="section__inner">
                 <span class="section__label">003</span>
-                <div class="plate__frame">
-                    <img src="/images/mission-control.jpg" alt="mission control" class="plate__img">
-                </div>
-                <a href="/products.html" class="plate__caption plate__caption--link">built is the beginning, we maintain what we build.</a>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <!-- Section 5: What we're building -->
-        <section id="building" class="section" data-reveal>
-            <div class="section__inner">
-                <span class="section__label">004</span>
-                <h2 class="section__heading">what we're building</h2>
+                <h2 class="section__heading">integration &amp; data</h2>
                 <p class="section__text">
-                    alongside client work, we're building our own products &mdash;
-                    <span class="status-tag status-tag--live">in flight</span> ai-cmo and ai-video,
-                    plus migrate factory and quarry, both in scoping.
+                    integration and data/ml services &mdash; connecting systems, pipelines,
+                    and models into working infrastructure.
                 </p>
-                <a href="/products.html" class="contact__link">see all products</a>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <!-- Contact -->
-        <section id="contact" class="section" data-reveal>
-            <div class="section__inner">
-                <span class="section__label">005</span>
-                <h2 class="section__heading">get in touch</h2>
-                <p class="section__text">
-                    tell us what you're building or what's broken.
-                    if it's a fit, we'll get back to you within a day.
-                </p>
-                <a href="mailto:hello@xsentrylabs.com" class="contact__link">hello@xsentrylabs.com</a>
+                <button class="contact__link" data-open-modal>talk to us</button>
             </div>
         </section>
     </main>
@@ -185,7 +146,7 @@
                     </ul>
                 </div>
                 <div>
-                    <a href="/services.html" class="footer__col-title">services</a>
+                    <div class="footer__col-title">services</div>
                     <ul class="footer__links">
                         <li><a href="/services.html#migrations">migrations</a></li>
                         <li><a href="/services.html#custom-builds">custom builds</a></li>
